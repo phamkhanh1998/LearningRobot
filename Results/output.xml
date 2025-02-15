@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-02-15T20:27:36.638197" rpa="false" schemaversion="5">
+<suite id="s1" name="Topic 01 Textboxtextarea" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Day1\topic_01_textboxtextarea.robot">
+<test id="s1-t1" name="TC01 - Enter your information" line="25">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-15T20:27:36.815459" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/text-box'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-15T20:27:36.815459" elapsed="27.987748"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-15T20:28:04.805483" level="INFO">Typing text 'kane' into text field '//input[@id='userName']'.</msg>
+<arg>${Textbox_textbox_FullName}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-15T20:28:04.804301" elapsed="0.136910"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-15T20:28:04.942208" level="INFO">Typing text 'kane@gmail.com' into text field '//input[@id='userEmail']'.</msg>
+<arg>${Textbox_textbox_Email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-15T20:28:04.942208" elapsed="0.107992"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-15T20:28:05.051618" level="INFO">Typing text '1A Tay Ho HN' into text field '//textarea[@id='currentAddress']'.</msg>
+<arg>${Textbox_textarea_CurrentAdd}</arg>
+<arg>${current_address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-15T20:28:05.051618" elapsed="0.107721"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-15T20:28:05.160507" level="INFO">Typing text '1A Tay Ho HN' into text field '//textarea[@id='permanentAddress']'.</msg>
+<arg>${Textbox_textarea_PermanentAdd}</arg>
+<arg>${permanent_address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-15T20:28:05.160507" elapsed="0.146731"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-15T20:28:05.308241" level="INFO">Clicking button '//button[@id='submit']'.</msg>
+<arg>${Textbox_button_Submit}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-15T20:28:05.308241" elapsed="0.125461"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-15T20:28:05.465783" level="INFO">Element '//div[@id='output']//p[@id='name']' contains text 'kane'.</msg>
+<arg>${Output_validate_FullName}</arg>
+<arg>${username}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-02-15T20:28:05.433702" elapsed="0.032081"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-15T20:28:05.486071" level="INFO">Element '//div[@id='output']//p[@id='email']' contains text 'kane@gmail.com'.</msg>
+<arg>${Output_validate_Email}</arg>
+<arg>${email}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-02-15T20:28:05.466960" elapsed="0.019111"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-15T20:28:05.508779" level="INFO">Element '//div[@id='output']//p[@id='currentAddress']' contains text '1A Tay Ho HN'.</msg>
+<arg>${Output_validate_CurrentAdd}</arg>
+<arg>${current_address}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-02-15T20:28:05.486071" elapsed="0.022708"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-15T20:28:05.528552" level="INFO">Element '//div[@id='output']//p[@id='permanentAddress']' contains text '1A Tay Ho HN'.</msg>
+<arg>${Output_validate_PermanentAdd}</arg>
+<arg>${permanent_address}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-02-15T20:28:05.508779" elapsed="0.019773"/>
+</kw>
+<doc>TC01 - Enter your information</doc>
+<status status="PASS" start="2025-02-15T20:27:36.815459" elapsed="28.714255"/>
+</test>
+<status status="PASS" start="2025-02-15T20:27:36.640332" elapsed="28.890386"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Topic 01 Textboxtextarea">Topic 01 Textboxtextarea</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

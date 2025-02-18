@@ -1,91 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-02-15T20:27:36.638197" rpa="false" schemaversion="5">
-<suite id="s1" name="Topic 01 Textboxtextarea" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Day1\topic_01_textboxtextarea.robot">
-<test id="s1-t1" name="TC01 - Enter your information" line="25">
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-02-18T22:07:02.416535" rpa="false" schemaversion="5">
+<suite id="s1" name="Topic 02 axesxpath" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_02_axesxpath.robot">
+<test id="s1-t1" name="TC02: Create a new employee" line="30">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S1: Open “https://opensource-demo.orangehrmlive.com/” with chrome</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-18T22:07:02.591095" elapsed="0.001085"/>
+</kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-15T20:27:36.815459" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/text-box'.</msg>
+<msg time="2025-02-18T22:07:02.592180" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-15T20:27:36.815459" elapsed="27.987748"/>
+<status status="PASS" start="2025-02-18T22:07:02.592180" elapsed="67.533571"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-02-18T22:08:10.125751" elapsed="0.001021"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S2: Login with admin account (Admin/admin123)</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-18T22:08:10.126772" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-15T20:28:04.805483" level="INFO">Typing text 'kane' into text field '//input[@id='userName']'.</msg>
-<arg>${Textbox_textbox_FullName}</arg>
+<msg time="2025-02-18T22:08:10.127796" level="INFO">Typing text 'Admin' into text field '//input[@name='username']'.</msg>
+<arg>${Textbox_textbox_UserName}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T20:28:04.804301" elapsed="0.136910"/>
+<status status="PASS" start="2025-02-18T22:08:10.127796" elapsed="14.427328"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-15T20:28:04.942208" level="INFO">Typing text 'kane@gmail.com' into text field '//input[@id='userEmail']'.</msg>
-<arg>${Textbox_textbox_Email}</arg>
-<arg>${email}</arg>
+<msg time="2025-02-18T22:08:24.556606" level="INFO">Typing text 'admin123' into text field '//input[@name='password']'.</msg>
+<arg>${Textbox_textbox_Password}</arg>
+<arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T20:28:04.942208" elapsed="0.107992"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-15T20:28:05.051618" level="INFO">Typing text '1A Tay Ho HN' into text field '//textarea[@id='currentAddress']'.</msg>
-<arg>${Textbox_textarea_CurrentAdd}</arg>
-<arg>${current_address}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T20:28:05.051618" elapsed="0.107721"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-15T20:28:05.160507" level="INFO">Typing text '1A Tay Ho HN' into text field '//textarea[@id='permanentAddress']'.</msg>
-<arg>${Textbox_textarea_PermanentAdd}</arg>
-<arg>${permanent_address}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T20:28:05.160507" elapsed="0.146731"/>
+<status status="PASS" start="2025-02-18T22:08:24.556606" elapsed="0.082183"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-02-15T20:28:05.308241" level="INFO">Clicking button '//button[@id='submit']'.</msg>
+<msg time="2025-02-18T22:08:24.638789" level="INFO">Clicking button '//button[@type='submit']'.</msg>
 <arg>${Textbox_button_Submit}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T20:28:05.308241" elapsed="0.125461"/>
+<status status="PASS" start="2025-02-18T22:08:24.638789" elapsed="0.054051"/>
 </kw>
-<kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2025-02-15T20:28:05.465783" level="INFO">Element '//div[@id='output']//p[@id='name']' contains text 'kane'.</msg>
-<arg>${Output_validate_FullName}</arg>
-<arg>${username}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2025-02-15T20:28:05.433702" elapsed="0.032081"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S3: Open PIM page</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-18T22:08:24.692840" elapsed="0.001028"/>
 </kw>
-<kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2025-02-15T20:28:05.486071" level="INFO">Element '//div[@id='output']//p[@id='email']' contains text 'kane@gmail.com'.</msg>
-<arg>${Output_validate_Email}</arg>
-<arg>${email}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2025-02-15T20:28:05.466960" elapsed="0.019111"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-18T22:08:24.693868" level="INFO">Clicking element '//span[text()='PIM']'.</msg>
+<arg>${Textbox_span_PIM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-18T22:08:24.693868" elapsed="6.078788"/>
 </kw>
-<kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2025-02-15T20:28:05.508779" level="INFO">Element '//div[@id='output']//p[@id='currentAddress']' contains text '1A Tay Ho HN'.</msg>
-<arg>${Output_validate_CurrentAdd}</arg>
-<arg>${current_address}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2025-02-15T20:28:05.486071" elapsed="0.022708"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S4: Open the Add Employee page</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-18T22:08:30.772656" elapsed="0.001309"/>
 </kw>
-<kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2025-02-15T20:28:05.528552" level="INFO">Element '//div[@id='output']//p[@id='permanentAddress']' contains text '1A Tay Ho HN'.</msg>
-<arg>${Output_validate_PermanentAdd}</arg>
-<arg>${permanent_address}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2025-02-15T20:28:05.508779" elapsed="0.019773"/>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-18T22:08:30.773965" level="INFO">Clicking button '//button[@class='oxd-button oxd-button--medium oxd-button--secondary']'.</msg>
+<arg>${Textbox_button_Add}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-18T22:08:30.773965" elapsed="1.034645"/>
 </kw>
-<doc>TC01 - Enter your information</doc>
-<status status="PASS" start="2025-02-15T20:27:36.815459" elapsed="28.714255"/>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-02-18T22:08:31.808610" elapsed="0.001005"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S5: Enter the valid information</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-18T22:08:31.809615" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-18T22:08:31.809615" level="INFO">Typing text 'Pham' into text field '//input[@name='firstName']'.</msg>
+<arg>${Textbox_textbox_FirstName}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-18T22:08:31.809615" elapsed="0.578924"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-18T22:08:32.389856" level="INFO">Typing text 'Quoc' into text field '//input[@name='middleName']'.</msg>
+<arg>${Textbox_textbox_MidName}</arg>
+<arg>${middlename}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-18T22:08:32.389856" elapsed="0.079965"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-18T22:08:32.470825" level="INFO">Typing text 'Khanh' into text field '//input[@name='firstName']'.</msg>
+<arg>${Textbox_textbox_LastName}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-18T22:08:32.469821" elapsed="0.093379"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S6: Logout</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-18T22:08:32.563200" elapsed="0.001253"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-18T22:08:32.564453" level="INFO">Clicking element '//p[@class='oxd-userdropdown-name']'.</msg>
+<arg>${Textbox_textbox_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-18T22:08:32.564453" elapsed="0.056725"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-18T22:08:32.621178" level="INFO">Clicking element '//a[text()='Logout']'.</msg>
+<arg>${Textbox_textbox_Option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-18T22:08:32.621178" elapsed="0.806382"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-18T22:08:33.427560" elapsed="2.239351"/>
+</kw>
+<status status="PASS" start="2025-02-18T22:07:02.591095" elapsed="93.077001"/>
 </test>
-<status status="PASS" start="2025-02-15T20:27:36.640332" elapsed="28.890386"/>
+<test id="s1-t2" name="TC03 - Verify the new employee is created:" line="58">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S1:Open “https://opensource-demo.orangehrmlive.com/” with Chrome</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-18T22:08:35.670627" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-18T22:08:35.671740" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-18T22:08:35.671740" elapsed="55.203520"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-02-18T22:09:30.876290" elapsed="0.001003"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S2: Login with the newly created account</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-18T22:09:30.877293" elapsed="0.001011"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-18T22:09:30.878304" level="INFO">Typing text 'phamkhanh1' into text field '//input[@name='username']'.</msg>
+<arg>${Textbox_textbox_UserName}</arg>
+<arg>${myusername}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-18T22:09:30.878304" elapsed="10.831457"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-18T22:09:41.710764" level="INFO">Typing text 'khanh123' into text field '//input[@name='password']'.</msg>
+<arg>${Textbox_textbox_Password}</arg>
+<arg>${mypassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-18T22:09:41.709761" elapsed="0.080808"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-18T22:09:41.790569" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<arg>${Textbox_button_Submit}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-18T22:09:41.790569" elapsed="1.552898"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S3: Click to My Info</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-18T22:09:43.343467" elapsed="0.001003"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-18T22:09:43.344470" level="INFO">Clicking element '//span[text()='My Info']'.</msg>
+<arg>${Textbox_span_MyInfo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-18T22:09:43.344470" elapsed="2.326598"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S4: Verify the information is correct with TC01 information</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-18T22:09:45.671068" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-18T22:09:45.672427" level="INFO">Verifying element '//input[@name='firstName']' contains exact text 'Pham'.</msg>
+<msg time="2025-02-18T22:09:46.217480" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-18T22:09:46.217480" level="FAIL">The text of element '//input[@name='firstName']' should have been 'Pham' but it was ''.</msg>
+<arg>${Textbox_textbox_FirstName}</arg>
+<arg>${firstname}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2025-02-18T22:09:45.672427" elapsed="0.558662">The text of element '//input[@name='firstName']' should have been 'Pham' but it was ''.</status>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${Textbox_textbox_MidName}</arg>
+<arg>${middlename}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2025-02-18T22:09:46.231632" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${Textbox_textbox_LastName}</arg>
+<arg>${lastname}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2025-02-18T22:09:46.231632" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-02-18T22:09:46.231632" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-02-18T22:08:35.669531" elapsed="70.562101">The text of element '//input[@name='firstName']' should have been 'Pham' but it was ''.</status>
+</test>
+<status status="FAIL" start="2025-02-18T22:07:02.417924" elapsed="163.814730"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Topic 01 Textboxtextarea">Topic 01 Textboxtextarea</stat>
+<stat pass="1" fail="1" skip="0" id="s1" name="Topic 02 axesxpath">Topic 02 axesxpath</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-02-18T22:07:02.412296" level="WARN">Error in file 'C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_02_axesxpath.robot' on line 5: Singular section headers like '*** Variable ***' are deprecated. Use plural format like '*** Variables ***' instead.</msg>
 </errors>
 </robot>

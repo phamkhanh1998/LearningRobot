@@ -10,21 +10,23 @@ ${password}  admin123
 ${firstname}  Pham
 ${middlename}  Quoc
 ${lastname}  Khanh
-${myusername}  phamkhanh1
-${mypassword}  khanh123
+${my_username}  phamkhanh1
+${my_password}  khanh123
 
 
 ${Textbox_textbox_UserName}  //input[@name='username']
 ${Textbox_textbox_Password}  //input[@name='password']
 ${Textbox_button_Submit}  //button[@type='submit']
-${Textbox_span_PIM}  //span[text()='PIM']
-${Textbox_span_MyInfo}  //span[text()='My Info']
-${Textbox_button_Add}  //button[@class='oxd-button oxd-button--medium oxd-button--secondary']
+${Textbox_button_Add}  //button[string()=' Add ']
+
 ${Textbox_textbox_FirstName}  //input[@name='firstName']
 ${Textbox_textbox_MidName}  //input[@name='middleName']
-${Textbox_textbox_LastName}  //input[@name='firstName']
-${Textbox_textbox_Menu}  //p[@class='oxd-userdropdown-name']
-${Textbox_textbox_Option}  //a[text()='Logout']
+${Textbox_textbox_LastName}  //input[@name='lastName']
+
+${Main_menu_PIM}  //span[text()='PIM']
+${Main_menu_MyInfor}  //span[text()='My Info']
+${Main_dropdown_UserInformation}  //p[@class='oxd-userdropdown-name']
+${Main_button_Logout}  //a[text()='Logout']
 
 *** Test Cases ***
 TC02: Create a new employee
@@ -38,7 +40,7 @@ TC02: Create a new employee
     Click Button    ${Textbox_button_Submit}
     
     Log To Console    S3: Open PIM page
-    Click Element    ${Textbox_span_PIM}
+    Click Element    ${Main_menu_PIM}
 
     Log To Console    S4: Open the Add Employee page
     Click Button    ${Textbox_button_Add}
@@ -50,8 +52,8 @@ TC02: Create a new employee
     Input Text    ${Textbox_textbox_LastName}    ${lastname}
 
     Log To Console    S6: Logout
-    Click Element    ${Textbox_textbox_Menu}
-    Click Element    ${Textbox_textbox_Option}
+    Click Element    ${Main_dropdown_UserInformation}
+    Click Element    ${Main_button_Logout}
 
     Close Browser
     
@@ -61,12 +63,12 @@ TC03 - Verify the new employee is created:
     Set Browser Implicit Wait    30
     
     Log To Console    S2: Login with the newly created account
-    Input Text    ${Textbox_textbox_UserName}    ${myusername}
-    Input Text    ${Textbox_textbox_Password}    ${mypassword}
+    Input Text    ${Textbox_textbox_UserName}    ${my_username}
+    Input Text    ${Textbox_textbox_Password}    ${my_password}
     Click Button    ${Textbox_button_Submit}
 
     Log To Console    S3: Click to My Info
-    Click Element    ${Textbox_span_MyInfo}
+    Click Element    ${Main_menu_MyInfor}
 
     Log To Console    S4: Verify the information is correct with TC01 information
     Element Text Should Be  ${Textbox_textbox_FirstName}  ${firstname}

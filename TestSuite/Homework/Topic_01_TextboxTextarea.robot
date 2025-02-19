@@ -23,39 +23,25 @@ ${Output_validate_PermanentAdd}  //div[@id='output']//p[@id='permanentAddress']
 
 *** Test Cases ***
 TC01 - Enter your information
-    [documentation]  TC01 - Enter your information
-
+    
+    Log To Console    Open “https://demoqa.com/text-box” with Chrome
     Open Browser  ${url}  ${browser}
+    
+    Log To Console    Enter your information
     Input Text  ${Textbox_textbox_FullName}  ${username}
     Input Text  ${Textbox_textbox_Email}  ${email}
     Input Text  ${Textbox_textarea_CurrentAdd}  ${current_address}
     Input Text  ${Textbox_textarea_PermanentAdd}  ${permanent_address}
+    
+    Log To Console    Click Submit
     Click Button  ${Textbox_button_Submit}
 
+    Log To Console    Verify the information displayed with the correct data
     Element Should Contain  ${Output_validate_FullName}  ${username}
     Element Should Contain  ${Output_validate_Email}  ${email}
     Element Should Contain  ${Output_validate_CurrentAdd}  ${current_address}
     Element Should Contain  ${Output_validate_PermanentAdd}  ${permanent_address}
 
     Close Browser
-
-#//input[@id='firstName']
-#//input[@id='lastName']
-#//input[@id='userEmail']
-#//input[@value='Male']
-#//input[@value='Female']
-#//input[@value='Other']
-#//input[@id='userNumber']
-#//div[@id='dateOfBirth']
-#//input[@id='subjectsInput']
-#//input[@value='1']
-#//input[@value='2']
-#//input[@value='3']
-#//input[@id='uploadPicture']
-#//textarea[@id='currentAddress']
-#//div[text()='Select State']
-#//div[text()='Select City']
-#//button[@id='submit']
-
 
 *** Keywords ***

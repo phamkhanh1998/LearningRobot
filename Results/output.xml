@@ -1,224 +1,454 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-02-18T22:07:02.416535" rpa="false" schemaversion="5">
-<suite id="s1" name="Topic 02 axesxpath" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_02_axesxpath.robot">
-<test id="s1-t1" name="TC02: Create a new employee" line="30">
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-02-21T23:22:18.286854" rpa="false" schemaversion="5">
+<suite id="s1" name="Topic 03 CheckboxRadio" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_03_CheckboxRadio.robot">
+<test id="s1-t1" name="TC01:" line="18">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S1: Open “https://opensource-demo.orangehrmlive.com/” with chrome</arg>
+<arg>S1:Open “https://demos.telerik.com/kendo-ui/checkbox/index” with Chrome</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-18T22:07:02.591095" elapsed="0.001085"/>
+<status status="PASS" start="2025-02-21T23:22:18.479884" elapsed="0.001996"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:07:02.592180" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
-<arg>${url}</arg>
+<msg time="2025-02-21T23:22:18.482414" level="INFO">Opening browser 'chrome' to base url 'https://demos.telerik.com/kendo-ui/checkbox/index'.</msg>
+<arg>${url_checkbox}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-18T22:07:02.592180" elapsed="67.533571"/>
+<status status="PASS" start="2025-02-21T23:22:18.482414" elapsed="10.845506"/>
 </kw>
-<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>30</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-02-18T22:08:10.125751" elapsed="0.001021"/>
+<status status="PASS" start="2025-02-21T23:22:29.328920" elapsed="0.001000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S2: Login with admin account (Admin/admin123)</arg>
+<arg>S2:Verify “Rear side airbags”</arg>
+<arg>and “Leather trim” are selected</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-18T22:08:10.126772" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-21T23:22:29.330919" elapsed="0.001000"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:08:10.127796" level="INFO">Typing text 'Admin' into text field '//input[@name='username']'.</msg>
-<arg>${Textbox_textbox_UserName}</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-18T22:08:10.127796" elapsed="14.427328"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:08:24.556606" level="INFO">Typing text 'admin123' into text field '//input[@name='password']'.</msg>
-<arg>${Textbox_textbox_Password}</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-18T22:08:24.556606" elapsed="0.082183"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:08:24.638789" level="INFO">Clicking button '//button[@type='submit']'.</msg>
-<arg>${Textbox_button_Submit}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-18T22:08:24.638789" elapsed="0.054051"/>
+<kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
+<msg time="2025-02-21T23:22:29.332920" level="INFO">Verifying checkbox '//input[@id='eq1']' is selected.</msg>
+<arg>${Demos_Checkbox_RearsideAirbags}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<status status="PASS" start="2025-02-21T23:22:29.331919" elapsed="0.055242"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S3: Open PIM page</arg>
+<arg>S3:Unselect “Rear side airbags” option</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-18T22:08:24.692840" elapsed="0.001028"/>
+<status status="PASS" start="2025-02-21T23:22:29.389161" elapsed="0.000000"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:08:24.693868" level="INFO">Clicking element '//span[text()='PIM']'.</msg>
-<arg>${Textbox_span_PIM}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-18T22:08:24.693868" elapsed="6.078788"/>
+<kw name="Unselect Checkbox" owner="SeleniumLibrary">
+<msg time="2025-02-21T23:22:29.391349" level="INFO">Unselecting checkbox '//input[@id='eq1']'.</msg>
+<arg>${Demos_Checkbox_RearsideAirbags}</arg>
+<doc>Removes the selection of checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-21T23:22:29.391349" elapsed="0.162914"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S4: Open the Add Employee page</arg>
+<arg>S4:Verify “Rear side airbags” is NOT selected</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-18T22:08:30.772656" elapsed="0.001309"/>
+<status status="PASS" start="2025-02-21T23:22:29.555263" elapsed="0.001001"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:08:30.773965" level="INFO">Clicking button '//button[@class='oxd-button oxd-button--medium oxd-button--secondary']'.</msg>
-<arg>${Textbox_button_Add}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-18T22:08:30.773965" elapsed="1.034645"/>
-</kw>
-<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
-<arg>10</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-02-18T22:08:31.808610" elapsed="0.001005"/>
+<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
+<msg time="2025-02-21T23:22:29.557263" level="INFO">Verifying checkbox '//input[@id='eq1']' is not selected.</msg>
+<arg>${Demos_Checkbox_RearsideAirbags}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="PASS" start="2025-02-21T23:22:29.556264" elapsed="0.036703"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S5: Enter the valid information</arg>
+<arg>S5:Select “Luggage compartment cover” option</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-18T22:08:31.809615" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-21T23:22:29.593967" elapsed="0.000000"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:08:31.809615" level="INFO">Typing text 'Pham' into text field '//input[@name='firstName']'.</msg>
-<arg>${Textbox_textbox_FirstName}</arg>
-<arg>${firstname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-18T22:08:31.809615" elapsed="0.578924"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:08:32.389856" level="INFO">Typing text 'Quoc' into text field '//input[@name='middleName']'.</msg>
-<arg>${Textbox_textbox_MidName}</arg>
-<arg>${middlename}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-18T22:08:32.389856" elapsed="0.079965"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:08:32.470825" level="INFO">Typing text 'Khanh' into text field '//input[@name='firstName']'.</msg>
-<arg>${Textbox_textbox_LastName}</arg>
-<arg>${lastname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-18T22:08:32.469821" elapsed="0.093379"/>
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2025-02-21T23:22:29.593967" level="INFO">Selecting checkbox '//input[@id='eq3']'.</msg>
+<arg>${Demos_Checkbox_LuggagecompartmentCover}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-21T23:22:29.593967" elapsed="0.068765"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S6: Logout</arg>
+<arg>S6:Verify “Luggage compartment cover” is selected</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-18T22:08:32.563200" elapsed="0.001253"/>
+<status status="PASS" start="2025-02-21T23:22:29.663738" elapsed="0.000000"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:08:32.564453" level="INFO">Clicking element '//p[@class='oxd-userdropdown-name']'.</msg>
-<arg>${Textbox_textbox_Menu}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-18T22:08:32.564453" elapsed="0.056725"/>
+<kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
+<msg time="2025-02-21T23:22:29.664744" level="INFO">Verifying checkbox '//input[@id='eq3']' is selected.</msg>
+<arg>${Demos_Checkbox_LuggagecompartmentCover}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<status status="PASS" start="2025-02-21T23:22:29.664744" elapsed="0.016764"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:08:32.621178" level="INFO">Clicking element '//a[text()='Logout']'.</msg>
-<arg>${Textbox_textbox_Option}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-18T22:08:32.621178" elapsed="0.806382"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-18T22:08:33.427560" elapsed="2.239351"/>
-</kw>
-<status status="PASS" start="2025-02-18T22:07:02.591095" elapsed="93.077001"/>
+<status status="PASS" start="2025-02-21T23:22:18.479884" elapsed="11.201624"/>
 </test>
-<test id="s1-t2" name="TC03 - Verify the new employee is created:" line="58">
+<test id="s1-t2" name="TC02:" line="38">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S1:Open “https://opensource-demo.orangehrmlive.com/” with Chrome</arg>
+<arg>S1:Open “https://demos.telerik.com/kendo-ui/radiobutton/index” with Chrome</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-18T22:08:35.670627" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-21T23:22:29.682520" elapsed="0.000000"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:08:35.671740" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
-<arg>${url}</arg>
+<msg time="2025-02-21T23:22:29.682520" level="INFO">Opening browser 'chrome' to base url 'https://demos.telerik.com/kendo-ui/radiobutton/index'.</msg>
+<arg>${url_radio}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-18T22:08:35.671740" elapsed="55.203520"/>
+<status status="PASS" start="2025-02-21T23:22:29.682520" elapsed="5.557220"/>
 </kw>
-<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>30</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-02-18T22:09:30.876290" elapsed="0.001003"/>
+<status status="PASS" start="2025-02-21T23:22:35.240823" elapsed="0.002449"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S2: Login with the newly created account</arg>
+<arg>S2:Verify 1.4 Petrol, 92kW</arg>
+<arg>is selected</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-18T22:09:30.877293" elapsed="0.001011"/>
+<status status="PASS" start="2025-02-21T23:22:35.244309" elapsed="0.000000"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:09:30.878304" level="INFO">Typing text 'phamkhanh1' into text field '//input[@name='username']'.</msg>
-<arg>${Textbox_textbox_UserName}</arg>
-<arg>${myusername}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-18T22:09:30.878304" elapsed="10.831457"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:09:41.710764" level="INFO">Typing text 'khanh123' into text field '//input[@name='password']'.</msg>
-<arg>${Textbox_textbox_Password}</arg>
-<arg>${mypassword}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-18T22:09:41.709761" elapsed="0.080808"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:09:41.790569" level="INFO">Clicking button '//button[@type='submit']'.</msg>
-<arg>${Textbox_button_Submit}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-18T22:09:41.790569" elapsed="1.552898"/>
+<kw name="Radio Button Should Be Set To" owner="SeleniumLibrary">
+<msg time="2025-02-21T23:22:35.245318" level="INFO">Verifying radio button 'engine' has selection 'engine1'.</msg>
+<msg time="2025-02-21T23:22:43.637406" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-21T23:22:43.637406" level="FAIL">Selection of radio button 'engine' should have been 'engine1' but was 'on'.</msg>
+<arg>engine</arg>
+<arg>engine1</arg>
+<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
+<status status="FAIL" start="2025-02-21T23:22:35.245318" elapsed="8.395782">Selection of radio button 'engine' should have been 'engine1' but was 'on'.</status>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S3: Click to My Info</arg>
+<arg>S3:Click on “2.0 Petrol, 147kW” option</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-18T22:09:43.343467" elapsed="0.001003"/>
+<status status="NOT RUN" start="2025-02-21T23:22:43.641478" elapsed="0.000000"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:09:43.344470" level="INFO">Clicking element '//span[text()='My Info']'.</msg>
-<arg>${Textbox_span_MyInfo}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-18T22:09:43.344470" elapsed="2.326598"/>
+<kw name="Select Radio Button" owner="SeleniumLibrary">
+<arg>engine</arg>
+<arg>engine3</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<status status="NOT RUN" start="2025-02-21T23:22:43.641478" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S4: Verify the information is correct with TC01 information</arg>
+<arg>S4:Verify “2.0 Petrol, 147kW” is selected</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-18T22:09:45.671068" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-02-21T23:22:43.641478" elapsed="0.000000"/>
 </kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-18T22:09:45.672427" level="INFO">Verifying element '//input[@name='firstName']' contains exact text 'Pham'.</msg>
-<msg time="2025-02-18T22:09:46.217480" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-02-18T22:09:46.217480" level="FAIL">The text of element '//input[@name='firstName']' should have been 'Pham' but it was ''.</msg>
-<arg>${Textbox_textbox_FirstName}</arg>
-<arg>${firstname}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="FAIL" start="2025-02-18T22:09:45.672427" elapsed="0.558662">The text of element '//input[@name='firstName']' should have been 'Pham' but it was ''.</status>
+<kw name="Radio Button Should Be Set To" owner="SeleniumLibrary">
+<arg>engine</arg>
+<arg>engine3</arg>
+<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
+<status status="NOT RUN" start="2025-02-21T23:22:43.641478" elapsed="0.000000"/>
 </kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<arg>${Textbox_textbox_MidName}</arg>
-<arg>${middlename}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="NOT RUN" start="2025-02-18T22:09:46.231632" elapsed="0.000000"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S5:Verify 1.4 Petrol, 92kW</arg>
+<arg>is NOT selected</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-02-21T23:22:43.642524" elapsed="0.000000"/>
 </kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<arg>${Textbox_textbox_LastName}</arg>
-<arg>${lastname}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="NOT RUN" start="2025-02-18T22:09:46.231632" elapsed="0.000000"/>
+<kw name="Radio Button Should Not Be Selected" owner="SeleniumLibrary">
+<arg>engine</arg>
+<doc>Verifies radio button group ``group_name`` has no selection.</doc>
+<status status="NOT RUN" start="2025-02-21T23:22:43.642524" elapsed="0.000000"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2025-02-18T22:09:46.231632" elapsed="0.000000"/>
-</kw>
-<status status="FAIL" start="2025-02-18T22:08:35.669531" elapsed="70.562101">The text of element '//input[@name='firstName']' should have been 'Pham' but it was ''.</status>
+<status status="FAIL" start="2025-02-21T23:22:29.681508" elapsed="13.961016">Selection of radio button 'engine' should have been 'engine1' but was 'on'.</status>
 </test>
-<status status="FAIL" start="2025-02-18T22:07:02.417924" elapsed="163.814730"/>
+<test id="s1-t3" name="TC03:" line="55">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S1:Open “https://material.angular.io/components/radio/examples” with Chrome</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T23:22:43.642524" elapsed="0.001105"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-21T23:22:43.643629" level="INFO">Opening browser 'chrome' to base url 'https://material.angular.io/components/radio/examples'.</msg>
+<arg>${url_material}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-21T23:22:43.643629" elapsed="8.248726"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-02-21T23:22:51.892355" elapsed="0.004275"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S2:Click on the Winter option</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T23:22:51.896630" elapsed="0.001253"/>
+</kw>
+<kw name="Select Radio Button" owner="SeleniumLibrary">
+<msg time="2025-02-21T23:22:51.898389" level="INFO">Selecting 'Winter' from radio button 'mat-radio-group-0'.</msg>
+<arg>mat-radio-group-0</arg>
+<arg>Winter</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<status status="PASS" start="2025-02-21T23:22:51.898389" elapsed="0.092006"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S3:Verify the Winter option is selected</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T23:22:51.990395" elapsed="0.000000"/>
+</kw>
+<kw name="Radio Button Should Be Set To" owner="SeleniumLibrary">
+<msg time="2025-02-21T23:22:51.991400" level="INFO">Verifying radio button 'mat-radio-group-0' has selection 'Winter'.</msg>
+<arg>mat-radio-group-0</arg>
+<arg>Winter</arg>
+<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
+<status status="PASS" start="2025-02-21T23:22:51.991400" elapsed="0.017798"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S4:Click on the Summer option</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T23:22:52.009198" elapsed="0.000000"/>
+</kw>
+<kw name="Select Radio Button" owner="SeleniumLibrary">
+<msg time="2025-02-21T23:22:52.009198" level="INFO">Selecting 'Summer' from radio button 'mat-radio-group-0'.</msg>
+<msg time="2025-02-21T23:22:53.190959" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-21T23:22:53.190959" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input type="radio" class="mdc-radio__native-control" id="mat-radio-2-input" name="mat-radio-group-0" value="Summer" tabindex="-1"&gt; is not clickable at point (339, 550). Other element would receive the click: &lt;div _ngcontent-ng-c2060896629="" class="popup"&gt;...&lt;/div&gt;
+  (Session info: chrome=133.0.6943.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7ECC26EE5+28773]
+	(No symbol) [0x00007FF7ECB925D0]
+	(No symbol) [0x00007FF7ECA28FAA]
+	(No symbol) [0x00007FF7ECA87109]
+	(No symbol) [0x00007FF7ECA84AD2]
+	(No symbol) [0x00007FF7ECA81B81]
+	(No symbol) [0x00007FF7ECA80A91]
+	(No symbol) [0x00007FF7ECA72284]
+	(No symbol) [0x00007FF7ECAA724A]
+	(No symbol) [0x00007FF7ECA71B36]
+	(No symbol) [0x00007FF7ECAA7460]
+	(No symbol) [0x00007FF7ECACF6F3]
+	(No symbol) [0x00007FF7ECAA7023]
+	(No symbol) [0x00007FF7ECA6FF5E]
+	(No symbol) [0x00007FF7ECA711E3]
+	GetHandleVerifier [0x00007FF7ECF7422D+3490733]
+	GetHandleVerifier [0x00007FF7ECF8BA13+3586963]
+	GetHandleVerifier [0x00007FF7ECF8144D+3544525]
+	GetHandleVerifier [0x00007FF7ECCEC9AA+838442]
+	(No symbol) [0x00007FF7ECB9D01F]
+	(No symbol) [0x00007FF7ECB995E4]
+	(No symbol) [0x00007FF7ECB99786]
+	(No symbol) [0x00007FF7ECB88CB9]
+	BaseThreadInitThunk [0x00007FFC2EEEE8D7+23]
+	RtlUserThreadStart [0x00007FFC2FDFBF2C+44]
+</msg>
+<arg>mat-radio-group-0</arg>
+<arg>Summer</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<status status="FAIL" start="2025-02-21T23:22:52.009198" elapsed="1.186252">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input type="radio" class="mdc-radio__native-control" id="mat-radio-2-input" name="mat-radio-group-0" value="Summer" tabindex="-1"&gt; is not clickable at point (339, 550). Other element would receive the click: &lt;div _ngcontent-ng-c2060896629="" class="popup"&gt;...&lt;/div&gt;
+  (Session info: chrome=133.0.6943.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7ECC26EE5+28773]
+	(No symbol) [0x00007FF7ECB925D0]
+	(No symbol) [0x00007FF7ECA28FAA]
+	(No symbol) [0x00007FF7ECA87109]
+	(No symbol) [0x00007FF7ECA84AD2]
+	(No symbol) [0x00007FF7ECA81B81]
+	(No symbol) [0x00007FF7ECA80A91]
+	(No symbol) [0x00007FF7ECA72284]
+	(No symbol) [0x00007FF7ECAA724A]
+	(No symbol) [0x00007FF7ECA71B36]
+	(No symbol) [0x00007FF7ECAA7460]
+	(No symbol) [0x00007FF7ECACF6F3]
+	(No symbol) [0x00007FF7ECAA7023]
+	(No symbol) [0x00007FF7ECA6FF5E]
+	(No symbol) [0x00007FF7ECA711E3]
+	GetHandleVerifier [0x00007FF7ECF7422D+3490733]
+	GetHandleVerifier [0x00007FF7ECF8BA13+3586963]
+	GetHandleVerifier [0x00007FF7ECF8144D+3544525]
+	GetHandleVerifier [0x00007FF7ECCEC9AA+838442]
+	(No symbol) [0x00007FF7ECB9D01F]
+	(No symbol) [0x00007FF7ECB995E4]
+	(No symbol) [0x00007FF7ECB99786]
+	(No symbol) [0x00007FF7ECB88CB9]
+	BaseThreadInitThunk [0x00007FFC2EEEE8D7+23]
+	RtlUserThreadStart [0x00007FFC2FDFBF2C+44]
+</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S5:Verify the Summer option is selected</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-02-21T23:22:53.195450" elapsed="0.000000"/>
+</kw>
+<kw name="Radio Button Should Be Set To" owner="SeleniumLibrary">
+<arg>mat-radio-group-0</arg>
+<arg>Summer</arg>
+<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
+<status status="NOT RUN" start="2025-02-21T23:22:53.196648" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S6:Verify the Winter option is NOT selected</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-02-21T23:22:53.196648" elapsed="0.000000"/>
+</kw>
+<kw name="Radio Button Should Not Be Selected" owner="SeleniumLibrary">
+<arg>mat-radio-group-0</arg>
+<doc>Verifies radio button group ``group_name`` has no selection.</doc>
+<status status="NOT RUN" start="2025-02-21T23:22:53.197820" elapsed="0.001006"/>
+</kw>
+<status status="FAIL" start="2025-02-21T23:22:43.642524" elapsed="9.556302">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input type="radio" class="mdc-radio__native-control" id="mat-radio-2-input" name="mat-radio-group-0" value="Summer" tabindex="-1"&gt; is not clickable at point (339, 550). Other element would receive the click: &lt;div _ngcontent-ng-c2060896629="" class="popup"&gt;...&lt;/div&gt;
+  (Session info: chrome=133.0.6943.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7ECC26EE5+28773]
+	(No symbol) [0x00007FF7ECB925D0]
+	(No symbol) [0x00007FF7ECA28FAA]
+	(No symbol) [0x00007FF7ECA87109]
+	(No symbol) [0x00007FF7ECA84AD2]
+	(No symbol) [0x00007FF7ECA81B81]
+	(No symbol) [0x00007FF7ECA80A91]
+	(No symbol) [0x00007FF7ECA72284]
+	(No symbol) [0x00007FF7ECAA724A]
+	(No symbol) [0x00007FF7ECA71B36]
+	(No symbol) [0x00007FF7ECAA7460]
+	(No symbol) [0x00007FF7ECACF6F3]
+	(No symbol) [0x00007FF7ECAA7023]
+	(No symbol) [0x00007FF7ECA6FF5E]
+	(No symbol) [0x00007FF7ECA711E3]
+	GetHandleVerifier [0x00007FF7ECF7422D+3490733]
+	GetHandleVerifier [0x00007FF7ECF8BA13+3586963]
+	GetHandleVerifier [0x00007FF7ECF8144D+3544525]
+	GetHandleVerifier [0x00007FF7ECCEC9AA+838442]
+	(No symbol) [0x00007FF7ECB9D01F]
+	(No symbol) [0x00007FF7ECB995E4]
+	(No symbol) [0x00007FF7ECB99786]
+	(No symbol) [0x00007FF7ECB88CB9]
+	BaseThreadInitThunk [0x00007FFC2EEEE8D7+23]
+	RtlUserThreadStart [0x00007FFC2FDFBF2C+44]
+</status>
+</test>
+<test id="s1-t4" name="TC04:" line="75">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S1:Access https://login.ubuntu.com/</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T23:22:53.201268" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-21T23:22:53.202684" level="INFO">Opening browser 'chrome' to base url 'https://login.ubuntu.com/'.</msg>
+<arg>${url_ubuntu}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-21T23:22:53.202684" elapsed="10.908987"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-02-21T23:23:04.112672" elapsed="0.007003"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S2 Click vaof i don't have an uo account</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T23:23:04.120991" elapsed="0.000000"/>
+</kw>
+<kw name="Select Radio Button" owner="SeleniumLibrary">
+<msg time="2025-02-21T23:23:04.121995" level="INFO">Selecting 'create' from radio button 'user-intentions'.</msg>
+<msg time="2025-02-21T23:23:05.410237" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-21T23:23:05.410237" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input type="radio" id="id_new_user" name="user-intentions" tabindex="20" value="create" data-qa-id="user_intention_create"&gt; is not clickable at point (51, 400). Other element would receive the click: &lt;label for="id_new_user" class="new-user"&gt;...&lt;/label&gt;
+  (Session info: chrome=133.0.6943.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7ECC26EE5+28773]
+	(No symbol) [0x00007FF7ECB925D0]
+	(No symbol) [0x00007FF7ECA28FAA]
+	(No symbol) [0x00007FF7ECA87109]
+	(No symbol) [0x00007FF7ECA84AD2]
+	(No symbol) [0x00007FF7ECA81B81]
+	(No symbol) [0x00007FF7ECA80A91]
+	(No symbol) [0x00007FF7ECA72284]
+	(No symbol) [0x00007FF7ECAA724A]
+	(No symbol) [0x00007FF7ECA71B36]
+	(No symbol) [0x00007FF7ECAA7460]
+	(No symbol) [0x00007FF7ECACF6F3]
+	(No symbol) [0x00007FF7ECAA7023]
+	(No symbol) [0x00007FF7ECA6FF5E]
+	(No symbol) [0x00007FF7ECA711E3]
+	GetHandleVerifier [0x00007FF7ECF7422D+3490733]
+	GetHandleVerifier [0x00007FF7ECF8BA13+3586963]
+	GetHandleVerifier [0x00007FF7ECF8144D+3544525]
+	GetHandleVerifier [0x00007FF7ECCEC9AA+838442]
+	(No symbol) [0x00007FF7ECB9D01F]
+	(No symbol) [0x00007FF7ECB995E4]
+	(No symbol) [0x00007FF7ECB99786]
+	(No symbol) [0x00007FF7ECB88CB9]
+	BaseThreadInitThunk [0x00007FFC2EEEE8D7+23]
+	RtlUserThreadStart [0x00007FFC2FDFBF2C+44]
+</msg>
+<arg>user-intentions</arg>
+<arg>create</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<status status="FAIL" start="2025-02-21T23:23:04.120991" elapsed="1.290245">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input type="radio" id="id_new_user" name="user-intentions" tabindex="20" value="create" data-qa-id="user_intention_create"&gt; is not clickable at point (51, 400). Other element would receive the click: &lt;label for="id_new_user" class="new-user"&gt;...&lt;/label&gt;
+  (Session info: chrome=133.0.6943.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7ECC26EE5+28773]
+	(No symbol) [0x00007FF7ECB925D0]
+	(No symbol) [0x00007FF7ECA28FAA]
+	(No symbol) [0x00007FF7ECA87109]
+	(No symbol) [0x00007FF7ECA84AD2]
+	(No symbol) [0x00007FF7ECA81B81]
+	(No symbol) [0x00007FF7ECA80A91]
+	(No symbol) [0x00007FF7ECA72284]
+	(No symbol) [0x00007FF7ECAA724A]
+	(No symbol) [0x00007FF7ECA71B36]
+	(No symbol) [0x00007FF7ECAA7460]
+	(No symbol) [0x00007FF7ECACF6F3]
+	(No symbol) [0x00007FF7ECAA7023]
+	(No symbol) [0x00007FF7ECA6FF5E]
+	(No symbol) [0x00007FF7ECA711E3]
+	GetHandleVerifier [0x00007FF7ECF7422D+3490733]
+	GetHandleVerifier [0x00007FF7ECF8BA13+3586963]
+	GetHandleVerifier [0x00007FF7ECF8144D+3544525]
+	GetHandleVerifier [0x00007FF7ECCEC9AA+838442]
+	(No symbol) [0x00007FF7ECB9D01F]
+	(No symbol) [0x00007FF7ECB995E4]
+	(No symbol) [0x00007FF7ECB99786]
+	(No symbol) [0x00007FF7ECB88CB9]
+	BaseThreadInitThunk [0x00007FFC2EEEE8D7+23]
+	RtlUserThreadStart [0x00007FFC2FDFBF2C+44]
+</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S3 Click vao cai con lai</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-02-21T23:23:05.411236" elapsed="0.000000"/>
+</kw>
+<kw name="Select Radio Button" owner="SeleniumLibrary">
+<arg>user-intentions</arg>
+<arg>id_returning_user</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<status status="NOT RUN" start="2025-02-21T23:23:05.411236" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-02-21T23:22:53.201268" elapsed="12.211251">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input type="radio" id="id_new_user" name="user-intentions" tabindex="20" value="create" data-qa-id="user_intention_create"&gt; is not clickable at point (51, 400). Other element would receive the click: &lt;label for="id_new_user" class="new-user"&gt;...&lt;/label&gt;
+  (Session info: chrome=133.0.6943.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7ECC26EE5+28773]
+	(No symbol) [0x00007FF7ECB925D0]
+	(No symbol) [0x00007FF7ECA28FAA]
+	(No symbol) [0x00007FF7ECA87109]
+	(No symbol) [0x00007FF7ECA84AD2]
+	(No symbol) [0x00007FF7ECA81B81]
+	(No symbol) [0x00007FF7ECA80A91]
+	(No symbol) [0x00007FF7ECA72284]
+	(No symbol) [0x00007FF7ECAA724A]
+	(No symbol) [0x00007FF7ECA71B36]
+	(No symbol) [0x00007FF7ECAA7460]
+	(No symbol) [0x00007FF7ECACF6F3]
+	(No symbol) [0x00007FF7ECAA7023]
+	(No symbol) [0x00007FF7ECA6FF5E]
+	(No symbol) [0x00007FF7ECA711E3]
+	GetHandleVerifier [0x00007FF7ECF7422D+3490733]
+	GetHandleVerifier [0x00007FF7ECF8BA13+3586963]
+	GetHandleVerifier [0x00007FF7ECF8144D+3544525]
+	GetHandleVerifier [0x00007FF7ECCEC9AA+838442]
+	(No symbol) [0x00007FF7ECB9D01F]
+	(No symbol) [0x00007FF7ECB995E4]
+	(No symbol) [0x00007FF7ECB99786]
+	(No symbol) [0x00007FF7ECB88CB9]
+	BaseThreadInitThunk [0x00007FFC2EEEE8D7+23]
+	RtlUserThreadStart [0x00007FFC2FDFBF2C+44]
+</status>
+</test>
+<status status="FAIL" start="2025-02-21T23:22:18.288251" elapsed="47.125268"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="3" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="1" skip="0" id="s1" name="Topic 02 axesxpath">Topic 02 axesxpath</stat>
+<stat pass="1" fail="3" skip="0" id="s1" name="Topic 03 CheckboxRadio">Topic 03 CheckboxRadio</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-02-18T22:07:02.412296" level="WARN">Error in file 'C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_02_axesxpath.robot' on line 5: Singular section headers like '*** Variable ***' are deprecated. Use plural format like '*** Variables ***' instead.</msg>
 </errors>
 </robot>

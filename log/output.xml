@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-02-21T22:13:20.163602" rpa="false" schemaversion="5">
+<suite id="s1" name="Topic 03 CheckboxRadio" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_03_CheckboxRadio.robot">
+<test id="s1-t1" name="TC02:" line="33">
+<status status="FAIL" start="2025-02-21T22:13:20.405152" elapsed="0.001006">Test cannot be empty.</status>
+</test>
+<status status="FAIL" start="2025-02-21T22:13:20.175408" elapsed="0.230750"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Topic 03 CheckboxRadio">Topic 03 CheckboxRadio</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

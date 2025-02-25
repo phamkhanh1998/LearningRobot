@@ -1,10 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-02-21T22:13:20.163602" rpa="false" schemaversion="5">
-<suite id="s1" name="Topic 03 CheckboxRadio" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_03_CheckboxRadio.robot">
-<test id="s1-t1" name="TC02:" line="33">
-<status status="FAIL" start="2025-02-21T22:13:20.405152" elapsed="0.001006">Test cannot be empty.</status>
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-02-25T21:55:25.574493" rpa="false" schemaversion="5">
+<suite id="s1" name="Topic 04 DropdownList" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_04_DropdownList.robot">
+<test id="s1-t1" name="TC01 - Default Dropdown" line="14">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S1:Open https://rode.com/en/support/where-to-buy</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-25T21:55:25.833860" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-25T21:55:25.833860" level="INFO">Opening browser 'chrome' to base url 'https://rode.com/en/support/where-to-buy'.</msg>
+<msg time="2025-02-25T21:55:38.327228" level="WARN">There was an error managing chromedriver (error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json)); using driver found in the cache</msg>
+<arg>${url_checkbox}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-25T21:55:25.833860" elapsed="26.829850"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-02-25T21:55:52.663710" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S2:Select “Vietnam” option on the dropdown list</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-25T21:55:52.663710" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-25T21:55:52.663710" level="INFO">Clicking element '//select[@id='country']'.</msg>
+<arg>${Rode_Droplis_Main}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-25T21:55:52.663710" elapsed="0.079103"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-02-25T21:55:53.035934" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-25T21:55:53.035934" level="FAIL">ValueError: No values given.</msg>
+<arg>${Rode_Droplist_VN}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="FAIL" start="2025-02-25T21:55:52.743921" elapsed="0.295663">ValueError: No values given.</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S3:Verify “Vietnam” is selected</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-02-25T21:55:53.039584" elapsed="0.000000"/>
+</kw>
+<kw name="Get Selected List Value" owner="SeleniumLibrary">
+<var>${checked_value}</var>
+<arg>//select[@id='country']</arg>
+<doc>Returns the value of selected option from selection list ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-25T21:55:53.039584" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${checked_value}</arg>
+<arg>Vietnam</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2025-02-25T21:55:53.039584" elapsed="0.001122"/>
+</kw>
+<status status="FAIL" start="2025-02-25T21:55:25.833860" elapsed="27.206846">ValueError: No values given.</status>
 </test>
-<status status="FAIL" start="2025-02-21T22:13:20.175408" elapsed="0.230750"/>
+<status status="FAIL" start="2025-02-25T21:55:25.590197" elapsed="27.450509"/>
 </suite>
 <statistics>
 <total>
@@ -13,9 +66,10 @@
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Topic 03 CheckboxRadio">Topic 03 CheckboxRadio</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Topic 04 DropdownList">Topic 04 DropdownList</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-02-25T21:55:38.327228" level="WARN">There was an error managing chromedriver (error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json)); using driver found in the cache</msg>
 </errors>
 </robot>

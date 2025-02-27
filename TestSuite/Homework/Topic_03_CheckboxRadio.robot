@@ -13,6 +13,8 @@ ${url_ggsheet}  https://docs.google.com/forms/d/e/1FAIpQLSfiypnd69zhuDkjKgqvpID9
 ${Demos_Checkbox_RearsideAirbags}  //input[@id='eq1']
 ${Demos_Checkbox_LuggagecompartmentCover}  //input[@id='eq3']
 
+@{Demos_Radio_1.4}  //input[@id='engine1']
+@{Demos_Radio_2.0}  //input[@id='engine3']
 
 *** Test Cases ***
 TC01:
@@ -41,16 +43,18 @@ TC02:
     Set Selenium Implicit Wait    30
     
     Log To Console    S2:Verify 1.4 Petrol, 92kW  is selected
-    Radio Button Should Be Set To    engine    engine1
+    ${checked_value}=  Get Element Attribute    @{Demos_Radio_1.4}    checked
+    Should Be Equal    ${checked_value}    ${True}
 
     Log To Console    S3:Click on “2.0 Petrol, 147kW” option
     Select Radio Button    engine    engine3
 
     Log To Console    S4:Verify “2.0 Petrol, 147kW” is selected
-    Radio Button Should Be Set To    engine    engine3
+    ${checked_value2}=  Get Element Attribute    @{Demos_Radio_2.0}    checked
+    Should Be Equal    ${checked_value2}    ${True}
     
     Log To Console    S5:Verify 1.4 Petrol, 92kW  is NOT selected
-    Radio Button Should Not Be Selected    engine
+    Should Be Equal As Strings    ${checked_value}    None
     
 TC03:
     Log To Console    S1:Open “https://material.angular.io/components/radio/examples” with Chrome

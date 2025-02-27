@@ -94,7 +94,7 @@ TC01 - Default Dropdown
 
     Close Browser
 
-TC02 - Custom Dropdown - React + APM
+TC02 - Custom Dropdown - React + APM => Not yet
     Log To Console    S1: Open https://demoqa.com/forms
         Open Browser  ${url_tc2}  ${browser}
         Maximize Browser Window

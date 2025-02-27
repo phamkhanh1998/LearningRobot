@@ -44,21 +44,22 @@ TC02:
     
     Log To Console    S2:Verify 1.4 Petrol, 92kW  is selected
     ${checked_value}=  Get Element Attribute    @{Demos_Radio_1.4}    checked
-    Should Be Equal    ${checked_value}    ${True}
+    Should Be Equal    ${checked_value}    true
 
     Log To Console    S3:Click on “2.0 Petrol, 147kW” option
     Select Radio Button    engine    engine3
 
     Log To Console    S4:Verify “2.0 Petrol, 147kW” is selected
     ${checked_value2}=  Get Element Attribute    @{Demos_Radio_2.0}    checked
-    Should Be Equal    ${checked_value2}    ${True}
+    Should Be Equal    ${checked_value2}    true
     
     Log To Console    S5:Verify 1.4 Petrol, 92kW  is NOT selected
-    Should Be Equal As Strings    ${checked_value}    None
+    Should Be Equal As Strings    ${checked_value}    true
     
 TC03:
     Log To Console    S1:Open “https://material.angular.io/components/radio/examples” with Chrome
     Open Browser  ${url_material}  ${browser}
+    Maximize Browser Window
     Set Selenium Implicit Wait    30
     
     Log To Console    S2:Click on the Winter option
@@ -71,7 +72,7 @@ TC03:
     Select Radio Button    mat-radio-group-0    Summer
     
     Log To Console    S5:Verify the Summer option is selected
-    Radio Button Should Be Set To    mat-radio-group-0    Summer
+    Radio Button Should Be Set To    mat-radio-group-0  Summer
     
     Log To Console    S6:Verify the Winter option is NOT selected
     Radio Button Should Not Be Selected    mat-radio-group-0

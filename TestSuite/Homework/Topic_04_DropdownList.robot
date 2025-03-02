@@ -11,7 +11,6 @@ ${url_tc5}  https://mikerodham.github.io/vue-dropdowns/
 ${url_tc6}  https://react.semantic-ui.com/maximize/dropdown-example-search-selection/
 ${browser}  chrome
 
-${Number_Of_Dealers}  82
 ${Rode_Droplis_Main}  //select[@id='country']
 ${Rode_Button_Search}  //button[text()='Search']
 ${Rode_List_Dealers}  //div[@class='col-lg-6 p-1 overflow-hidden']
@@ -75,7 +74,6 @@ TC01 - Default Dropdown
         Set Selenium Implicit Wait    30
 
     Log To Console    S2:Select “Vietnam” option on the dropdown list
-        Click Element    ${Rode_Droplis_Main}
         Select From List By Value    ${Rode_Droplis_Main}  Vietnam
 
     Log To Console    S3:Verify “Vietnam” is selected
@@ -89,8 +87,7 @@ TC01 - Default Dropdown
         ${checked_count_dealers}=  Get Element Count    ${Rode_List_Dealers}
 
     Log To Console    S6:Verify the number of deadlier is 2461?
-        ${verify_count_dealers}=  Convert To Integer    ${Number_Of_Dealers}
-        Should Be Equal  ${checked_count_dealers}  ${verify_count_dealers}
+        Should Be Equal  ${checked_count_dealers}  ${82}
 
     Close Browser
 
@@ -115,6 +112,7 @@ TC02 - Custom Dropdown - React + APM => Not yet
         Select From List By Label    ${Demoqa_Select_State_NCR}
         Select From List By Label    ${Demoqa_Select_City_Delhi}
         Click Button    ${Demoqa_Button_Submit}
+
 
 TC03 - Custom Dropdown - JQuery
     Log To Console    S1: Open https://jqueryui.com/resources/demos/selectmenu/default.html

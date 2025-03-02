@@ -1,92 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-02-27T21:13:30.709479" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-03-02T23:34:47.785026" rpa="false" schemaversion="5">
 <suite id="s1" name="Topic 03 CheckboxRadio" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_03_CheckboxRadio.robot">
-<test id="s1-t1" name="TC03:" line="59">
+<test id="s1-t1" name="TC04:" line="85">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S1:Open “https://material.angular.io/components/radio/examples” with Chrome</arg>
+<arg>S1:Access https://login.ubuntu.com/</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-27T21:13:31.042802" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-02T23:34:48.073732" elapsed="0.000000"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-27T21:13:31.042802" level="INFO">Opening browser 'chrome' to base url 'https://material.angular.io/components/radio/examples'.</msg>
-<arg>${url_material}</arg>
+<msg time="2025-03-02T23:34:48.073732" level="INFO">Opening browser 'chrome' to base url 'https://login.ubuntu.com/'.</msg>
+<arg>${url_ubuntu}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-27T21:13:31.042802" elapsed="2.819218"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-27T21:13:33.862020" elapsed="0.108415"/>
+<status status="PASS" start="2025-03-02T23:34:48.073732" elapsed="5.722925"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>30</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-02-27T21:13:33.971458" elapsed="0.003615"/>
+<status status="PASS" start="2025-03-02T23:34:53.796657" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S2:Click on the Winter option</arg>
+<arg>S2 Click i don't have an uo account</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-27T21:13:33.975073" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-02T23:34:53.796657" elapsed="0.000000"/>
 </kw>
-<kw name="Select Radio Button" owner="SeleniumLibrary">
-<msg time="2025-02-27T21:13:33.976567" level="INFO">Selecting 'Winter' from radio button 'mat-radio-group-0'.</msg>
-<arg>mat-radio-group-0</arg>
-<arg>Winter</arg>
-<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
-<status status="PASS" start="2025-02-27T21:13:33.975073" elapsed="0.140232"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-02T23:34:53.796657" level="INFO">Clicking element '//input[@id='id_new_user']'.</msg>
+<msg time="2025-03-02T23:34:54.974044" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-02T23:34:54.976147" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input type="radio" id="id_new_user" name="user-intentions" tabindex="20" value="create" data-qa-id="user_intention_create"&gt; is not clickable at point (51, 200). Other element would receive the click: &lt;label for="id_new_user" class="new-user"&gt;...&lt;/label&gt;
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF670E4C6A5+28789]
+	(No symbol) [0x00007FF670DB5B20]
+	(No symbol) [0x00007FF670C48F9A]
+	(No symbol) [0x00007FF670CA71E9]
+	(No symbol) [0x00007FF670CA4BA2]
+	(No symbol) [0x00007FF670CA1C51]
+	(No symbol) [0x00007FF670CA0B51]
+	(No symbol) [0x00007FF670C92314]
+	(No symbol) [0x00007FF670CC732A]
+	(No symbol) [0x00007FF670C91BC6]
+	(No symbol) [0x00007FF670CC7540]
+	(No symbol) [0x00007FF670CEF7E3]
+	(No symbol) [0x00007FF670CC7103]
+	(No symbol) [0x00007FF670C8FFC0]
+	(No symbol) [0x00007FF670C91273]
+	GetHandleVerifier [0x00007FF671191AED+3458237]
+	GetHandleVerifier [0x00007FF6711A829C+3550316]
+	GetHandleVerifier [0x00007FF67119DB9D+3507565]
+	GetHandleVerifier [0x00007FF670F12C6A+841274]
+	(No symbol) [0x00007FF670DC09EF]
+	(No symbol) [0x00007FF670DBCB34]
+	(No symbol) [0x00007FF670DBCCD6]
+	(No symbol) [0x00007FF670DAC119]
+	BaseThreadInitThunk [0x00007FFE5D33E8D7+23]
+	RtlUserThreadStart [0x00007FFE5F07BF2C+44]
+</msg>
+<arg>${Ubuntu_Radio_idonhave}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-03-02T23:34:53.796657" elapsed="1.179490">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input type="radio" id="id_new_user" name="user-intentions" tabindex="20" value="create" data-qa-id="user_intention_create"&gt; is not clickable at point (51, 200). Other element would receive the click: &lt;label for="id_new_user" class="new-user"&gt;...&lt;/label&gt;
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF670E4C6A5+28789]
+	(No symbol) [0x00007FF670DB5B20]
+	(No symbol) [0x00007FF670C48F9A]
+	(No symbol) [0x00007FF670CA71E9]
+	(No symbol) [0x00007FF670CA4BA2]
+	(No symbol) [0x00007FF670CA1C51]
+	(No symbol) [0x00007FF670CA0B51]
+	(No symbol) [0x00007FF670C92314]
+	(No symbol) [0x00007FF670CC732A]
+	(No symbol) [0x00007FF670C91BC6]
+	(No symbol) [0x00007FF670CC7540]
+	(No symbol) [0x00007FF670CEF7E3]
+	(No symbol) [0x00007FF670CC7103]
+	(No symbol) [0x00007FF670C8FFC0]
+	(No symbol) [0x00007FF670C91273]
+	GetHandleVerifier [0x00007FF671191AED+3458237]
+	GetHandleVerifier [0x00007FF6711A829C+3550316]
+	GetHandleVerifier [0x00007FF67119DB9D+3507565]
+	GetHandleVerifier [0x00007FF670F12C6A+841274]
+	(No symbol) [0x00007FF670DC09EF]
+	(No symbol) [0x00007FF670DBCB34]
+	(No symbol) [0x00007FF670DBCCD6]
+	(No symbol) [0x00007FF670DAC119]
+	BaseThreadInitThunk [0x00007FFE5D33E8D7+23]
+	RtlUserThreadStart [0x00007FFE5F07BF2C+44]
+</status>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>S3:Verify the Winter option is selected</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-27T21:13:34.115305" elapsed="0.001509"/>
-</kw>
-<kw name="Radio Button Should Be Set To" owner="SeleniumLibrary">
-<msg time="2025-02-27T21:13:34.116814" level="INFO">Verifying radio button 'mat-radio-group-0' has selection 'Winter'.</msg>
-<arg>mat-radio-group-0</arg>
-<arg>Winter</arg>
-<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
-<status status="PASS" start="2025-02-27T21:13:34.116814" elapsed="0.033371"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>S4:Click on the Summer option</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-27T21:13:34.160655" elapsed="0.000000"/>
-</kw>
-<kw name="Select Radio Button" owner="SeleniumLibrary">
-<msg time="2025-02-27T21:13:34.162675" level="INFO">Selecting 'Summer' from radio button 'mat-radio-group-0'.</msg>
-<arg>mat-radio-group-0</arg>
-<arg>Summer</arg>
-<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
-<status status="PASS" start="2025-02-27T21:13:34.160655" elapsed="0.173242"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>S5:Verify the Summer option is selected</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-27T21:13:34.333897" elapsed="0.000000"/>
-</kw>
-<kw name="Radio Button Should Be Set To" owner="SeleniumLibrary">
-<msg time="2025-02-27T21:13:34.333897" level="INFO">Verifying radio button 'mat-radio-group-0' has selection 'Summer'.</msg>
-<arg>mat-radio-group-0</arg>
-<arg>Summer</arg>
-<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
-<status status="PASS" start="2025-02-27T21:13:34.333897" elapsed="0.032620"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>S6:Verify the Winter option is NOT selected</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-27T21:13:34.366517" elapsed="0.011175"/>
-</kw>
-<kw name="Radio Button Should Not Be Selected" owner="SeleniumLibrary">
-<msg time="2025-02-27T21:13:34.378695" level="INFO">Verifying radio button 'mat-radio-group-0' has no selection.</msg>
-<msg time="2025-02-27T21:13:34.617084" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-02-27T21:13:34.617084" level="FAIL">Radio button group 'mat-radio-group-0' should not have had selection, but 'Summer' was selected.</msg>
-<arg>mat-radio-group-0</arg>
-<doc>Verifies radio button group ``group_name`` has no selection.</doc>
-<status status="FAIL" start="2025-02-27T21:13:34.377692" elapsed="0.239392">Radio button group 'mat-radio-group-0' should not have had selection, but 'Summer' was selected.</status>
-</kw>
-<status status="FAIL" start="2025-02-27T21:13:31.042802" elapsed="3.574282">Radio button group 'mat-radio-group-0' should not have had selection, but 'Summer' was selected.</status>
+<status status="FAIL" start="2025-03-02T23:34:48.073732" elapsed="6.902415">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input type="radio" id="id_new_user" name="user-intentions" tabindex="20" value="create" data-qa-id="user_intention_create"&gt; is not clickable at point (51, 200). Other element would receive the click: &lt;label for="id_new_user" class="new-user"&gt;...&lt;/label&gt;
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF670E4C6A5+28789]
+	(No symbol) [0x00007FF670DB5B20]
+	(No symbol) [0x00007FF670C48F9A]
+	(No symbol) [0x00007FF670CA71E9]
+	(No symbol) [0x00007FF670CA4BA2]
+	(No symbol) [0x00007FF670CA1C51]
+	(No symbol) [0x00007FF670CA0B51]
+	(No symbol) [0x00007FF670C92314]
+	(No symbol) [0x00007FF670CC732A]
+	(No symbol) [0x00007FF670C91BC6]
+	(No symbol) [0x00007FF670CC7540]
+	(No symbol) [0x00007FF670CEF7E3]
+	(No symbol) [0x00007FF670CC7103]
+	(No symbol) [0x00007FF670C8FFC0]
+	(No symbol) [0x00007FF670C91273]
+	GetHandleVerifier [0x00007FF671191AED+3458237]
+	GetHandleVerifier [0x00007FF6711A829C+3550316]
+	GetHandleVerifier [0x00007FF67119DB9D+3507565]
+	GetHandleVerifier [0x00007FF670F12C6A+841274]
+	(No symbol) [0x00007FF670DC09EF]
+	(No symbol) [0x00007FF670DBCB34]
+	(No symbol) [0x00007FF670DBCCD6]
+	(No symbol) [0x00007FF670DAC119]
+	BaseThreadInitThunk [0x00007FFE5D33E8D7+23]
+	RtlUserThreadStart [0x00007FFE5F07BF2C+44]
+</status>
 </test>
-<status status="FAIL" start="2025-02-27T21:13:30.725261" elapsed="3.891823"/>
+<status status="FAIL" start="2025-03-02T23:34:47.803880" elapsed="7.172267"/>
 </suite>
 <statistics>
 <total>

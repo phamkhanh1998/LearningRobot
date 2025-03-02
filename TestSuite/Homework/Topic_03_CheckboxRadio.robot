@@ -13,8 +13,12 @@ ${url_ggsheet}  https://docs.google.com/forms/d/e/1FAIpQLSfiypnd69zhuDkjKgqvpID9
 ${Demos_Checkbox_RearsideAirbags}  //input[@id='eq1']
 ${Demos_Checkbox_LuggagecompartmentCover}  //input[@id='eq3']
 
-@{Demos_Radio_1.4}  //input[@id='engine1']
-@{Demos_Radio_2.0}  //input[@id='engine3']
+${Demos_Radio_1.4}  //input[@id='engine1']
+${Demos_Radio_2.0}  //input[@id='engine3']
+
+${Material_Radio_Winter}  //input[@id="mat-radio-0-input"]
+
+${Ubuntu_Radio_idonhave}  //input[@id='id_new_user']
 
 *** Test Cases ***
 TC01:
@@ -43,14 +47,14 @@ TC02:
     Set Selenium Implicit Wait    30
     
     Log To Console    S2:Verify 1.4 Petrol, 92kW  is selected
-    ${checked_value}=  Get Element Attribute    @{Demos_Radio_1.4}    checked
+    ${checked_value}=  Get Element Attribute    ${Demos_Radio_1.4}    checked
     Should Be Equal    ${checked_value}    true
 
     Log To Console    S3:Click on “2.0 Petrol, 147kW” option
     Select Radio Button    engine    engine3
 
     Log To Console    S4:Verify “2.0 Petrol, 147kW” is selected
-    ${checked_value2}=  Get Element Attribute    @{Demos_Radio_2.0}    checked
+    ${checked_value2}=  Get Element Attribute    ${Demos_Radio_2.0}    checked
     Should Be Equal    ${checked_value2}    true
     
     Log To Console    S5:Verify 1.4 Petrol, 92kW  is NOT selected
@@ -63,7 +67,7 @@ TC03:
     Set Selenium Implicit Wait    30
     
     Log To Console    S2:Click on the Winter option
-    Select Radio Button    mat-radio-group-0    Winter
+    Click Element    ${Material_Radio_Winter}
     
     Log To Console    S3:Verify the Winter option is selected
     Radio Button Should Be Set To    mat-radio-group-0    Winter
@@ -75,18 +79,20 @@ TC03:
     Radio Button Should Be Set To    mat-radio-group-0  Summer
     
     Log To Console    S6:Verify the Winter option is NOT selected
-    Radio Button Should Not Be Selected    mat-radio-group-0
+    ${checked_value}=  Get Element Attribute    //input[@id="mat-radio-0-input"]    tabindex
+    Should Be Equal    ${checked_value}    -1
     
 TC04:
     Log To Console    S1:Access https://login.ubuntu.com/
     Open Browser  ${url_ubuntu}  ${browser}
     Set Selenium Implicit Wait    30
 
-    Log To Console    S2 Click vaof i don't have an uo account
-    Select Radio Button    user-intentions    create
+    Log To Console    S2 Click i don't have an uo account
+    Click Element    ${Ubuntu_Radio_idonhave}
+    Radio Button Should Be Set To    id_new_user    create
     
-    Log To Console    S3 Click vao cai con lai
-    Select Radio Button    user-intentions    id_returning_user
+#    Log To Console    S3 Click I have an Ubuntu One account and my password is:
+#    Select Radio Button    user-intentions    id_returning_user
 
 
 *** Keywords ***

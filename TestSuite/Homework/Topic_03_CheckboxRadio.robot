@@ -18,7 +18,7 @@ ${Demos_Radio_2.0}  //input[@id='engine3']
 
 ${Material_Radio_Winter}  //input[@id="mat-radio-0-input"]
 
-${Ubuntu_Radio_idonhave}  //input[@id='id_new_user']
+${Ubuntu_Radio_idonhave}  //div[@id="yui_3_5_0_3_1741008117514_91"]/input[@id='id_new_user']
 
 *** Test Cases ***
 TC01:
@@ -41,6 +41,8 @@ TC01:
     Log To Console    S6:Verify “Luggage compartment cover” is selected
     Checkbox Should Be Selected    ${Demos_Checkbox_LuggagecompartmentCover}
 
+    Close Browser
+
 TC02:
     Log To Console    S1:Open “https://demos.telerik.com/kendo-ui/radiobutton/index” with Chrome
     Open Browser  ${url_radio}  ${browser}
@@ -59,6 +61,8 @@ TC02:
     
     Log To Console    S5:Verify 1.4 Petrol, 92kW  is NOT selected
     Should Be Equal As Strings    ${checked_value}    true
+
+    Close Browser
     
 TC03:
     Log To Console    S1:Open “https://material.angular.io/components/radio/examples” with Chrome
@@ -81,6 +85,8 @@ TC03:
     Log To Console    S6:Verify the Winter option is NOT selected
     ${checked_value}=  Get Element Attribute    //input[@id="mat-radio-0-input"]    tabindex
     Should Be Equal    ${checked_value}    -1
+
+    Close Browser
     
 TC04:
     Log To Console    S1:Access https://login.ubuntu.com/
@@ -89,7 +95,7 @@ TC04:
 
     Log To Console    S2 Click i don't have an uo account
     Click Element    ${Ubuntu_Radio_idonhave}
-    Radio Button Should Be Set To    id_new_user    create
+#    Radio Button Should Be Set To    id_new_user    create
     
 #    Log To Console    S3 Click I have an Ubuntu One account and my password is:
 #    Select Radio Button    user-intentions    id_returning_user

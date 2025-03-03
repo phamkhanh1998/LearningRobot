@@ -70,24 +70,24 @@ ${React_Select_SelectedAS}  //div[text()='American Samoa']
 *** Test Cases ***
 TC01 - Default Dropdown
     Log To Console    S1:Open https://rode.com/en/support/where-to-buy
-        Open Browser  ${url_tc1}  ${browser}
-        Set Selenium Implicit Wait    30
+    Open Browser  ${url_tc1}  ${browser}
+    Set Selenium Implicit Wait    30
 
     Log To Console    S2:Select “Vietnam” option on the dropdown list
-        Select From List By Value    ${Rode_Droplis_Main}  Vietnam
+    Select From List By Value    ${Rode_Droplis_Main}  Vietnam
 
     Log To Console    S3:Verify “Vietnam” is selected
-        ${checked_value}=  Get Selected List Value    ${Rode_Droplis_Main}
-        Should Be Equal    ${checked_value}    Vietnam
+    ${checked_value}=  Get Selected List Value    ${Rode_Droplis_Main}
+    Should Be Equal    ${checked_value}    Vietnam
 
     Log To Console    S4:Click on Search button
-        Click Button    ${Rode_Button_Search}
+    Click Button    ${Rode_Button_Search}
 
     Log To Console    S5:Get the number of dealers
-        ${checked_count_dealers}=  Get Element Count    ${Rode_List_Dealers}
+    ${checked_count_dealers}=  Get Element Count    ${Rode_List_Dealers}
 
     Log To Console    S6:Verify the number of deadlier is 2461?
-        Should Be Equal  ${checked_count_dealers}  ${82}
+    Should Be Equal  ${checked_count_dealers}  ${82}
 
     Close Browser
 
@@ -116,122 +116,122 @@ TC02 - Custom Dropdown - React + APM => Not yet
 
 TC03 - Custom Dropdown - JQuery
     Log To Console    S1: Open https://jqueryui.com/resources/demos/selectmenu/default.html
-        Open Browser  ${url_tc3}  ${browser}
+    Open Browser  ${url_tc3}  ${browser}
     
-    Log To Console    S2: Select speed = Fast
-        Click Element  ${Jquery_Select_Speed}
-        Click Element  ${Jquery_Select_Fast}
+    Log To Console    S2: Select speed = Faster
+    Click Element  ${Jquery_Select_Speed}
+    Click Element  ${Jquery_Select_Fast}
 
-    Log To Console    S3: Verify dropdown is selected by “Fast” value
-        ${checked_speed}=  Get Text  //span[@id='speed-button']//span[text()='Faster']
-        Should Be Equal  ${checked_speed}  Faster
+    Log To Console    S3: Verify dropdown is selected by “Faster” value
+    ${checked_speed}=  Get Text  //span[@id='speed-button']//span[text()='Faster']
+    Should Be Equal  ${checked_speed}  Faster
 
     Log To Console    S4: Select File = jQuery.js
-        Click Element  ${Jquery_Select_File}
-        Click Element  ${Jquery_Select_jQuery}
+    Click Element  ${Jquery_Select_File}
+    Click Element  ${Jquery_Select_jQuery}
 
     Log To Console    S5: Verify File is selected by “jQuery.js” value
-        ${checked_file}=  Get Text  //span[@id='files-button']//span[text()='jQuery.js']
-        Should Be Equal  ${checked_file}  jQuery.js
+    ${checked_file}=  Get Text  //span[@id='files-button']//span[text()='jQuery.js']
+    Should Be Equal  ${checked_file}  jQuery.js
 
     Log To Console    S6: Select number is 7
-        Click Element  ${Jquery_Select_Number}
-        Click Element  ${Jquery_Select_7}
+    Click Element  ${Jquery_Select_Number}
+    Click Element  ${Jquery_Select_7}
 
     Log To Console    S7: Verify number is selected by 7
-        ${verify_number_jquery}=  Convert To String  ${Jquery_Select_a_number}
-        ${checked_number}=  Get Text  //span[@id='number-button']//span[number()='7']
-        Should Be Equal  ${checked_number}  ${verify_number_jquery}
+    ${verify_number_jquery}=  Convert To String  ${Jquery_Select_a_number}
+    ${checked_number}=  Get Text  //span[@id='number-button']//span[number()='7']
+    Should Be Equal  ${checked_number}  ${verify_number_jquery}
 
     Log To Console    S8: Select title is Mrs.
-        Click Element  ${Jquery_Select_Title}
-        Click Element  ${Jquery_Select_Mrs}
+    Click Element  ${Jquery_Select_Title}
+    Click Element  ${Jquery_Select_Mrs}
 
     Log To Console    S9: Verify title is selected by Mrs.
-        ${checked_title}=  Get Text  //span[@id='salutation-button']//span[text()='Mrs.']
-        Should Be Equal  ${checked_title}  Mrs.
+    ${checked_title}=  Get Text  //span[@id='salutation-button']//span[text()='Mrs.']
+    Should Be Equal  ${checked_title}  Mrs.
 
     Close Browser
 
 TC04 - Custom Dropdown - ReactJS
     Log To Console    S1: Open https://react.semantic-ui.com/maximize/dropdown-example-selection/
-        Open Browser  ${url_tc4}  ${browser}
+    Open Browser  ${url_tc4}  ${browser}
         
     Log To Console    S2: Select “Elliot Fu” option
-        Click Element    ${ReactJS_Select_Main}
-        Click Element    ${ReactJS_Select_EF}
+    Click Element    ${ReactJS_Select_Main}
+    Click Element    ${ReactJS_Select_EF}
         
     Log To Console    S3: Verify “Elliot Fu” is selected successfully
-        ${checked_ef}=  Get Text    ${ReactJS_Select_Verify}
-        Should Be Equal    ${checked_ef}    Elliot Fu
+    ${checked_ef}=  Get Text    ${ReactJS_Select_Verify}
+    Should Be Equal    ${checked_ef}    Elliot Fu
         
     Log To Console    S4: Select “Stevie Feliciano” option
-        Click Element    ${ReactJS_Select_SelectedEF}
-        Click Element    ${ReactJS_Select_SF}
+    Click Element    ${ReactJS_Select_SelectedEF}
+    Click Element    ${ReactJS_Select_SF}
 
     Log To Console    S5: Verify “Stevie Feliciano” is selected successfully
-        ${checked_sf}=  Get Text    ${ReactJS_Select_Verify}
-        Should Be Equal    ${checked_sf}    Stevie Feliciano
+    ${checked_sf}=  Get Text    ${ReactJS_Select_Verify}
+    Should Be Equal    ${checked_sf}    Stevie Feliciano
 
     Log To Console    S6: Select “Justen Kitsune” option
-        Click Element    ${ReactJS_Select_SelectedSF}
-        Click Element    ${ReactJS_Select_JK}
+    Click Element    ${ReactJS_Select_SelectedSF}
+    Click Element    ${ReactJS_Select_JK}
 
     Log To Console    S7: Verify “Justen Kitsune” is selected successfully
-        ${checked_jk}=  Get Text    ${ReactJS_Select_Verify}
-        Should Be Equal    ${checked_jk}    Justen Kitsune
+    ${checked_jk}=  Get Text    ${ReactJS_Select_Verify}
+    Should Be Equal    ${checked_jk}    Justen Kitsune
 
     Close Browser
 
 TC05 - Custom Dropdown - VueJS
     Log To Console    S1: Open https://mikerodham.github.io/vue-dropdowns/
-        Open Browser  ${url_tc5}  ${browser}
+    Open Browser  ${url_tc5}  ${browser}
         
     Log To Console    S2: Select “Second Option” option
-        Click Element    ${Vue_Select_Items}
-        Click Element    ${Vue_Select_SecondOp}
+    Click Element    ${Vue_Select_Items}
+    Click Element    ${Vue_Select_SecondOp}
         
     Log To Console    S3: Verify “Second Option” is selected successfully
-        ${checked_second}=  Get Text    ${Vue_Select_Items}
-        Should Be Equal    ${checked_second}    Second Option
+    ${checked_second}=  Get Text    ${Vue_Select_Items}
+    Should Be Equal    ${checked_second}    Second Option
         
     Log To Console    S4: Select “First Option” option
-        Click Element    ${Vue_Select_Items}
-        Click Element    ${Vue_Select_FirstOp}
+    Click Element    ${Vue_Select_Items}
+    Click Element    ${Vue_Select_FirstOp}
 
     Log To Console    S5: Verify “First Option” is selected successfully
-        ${checked_first}=  Get Text    ${Vue_Select_Items}
-        Should Be Equal    ${checked_first}    First Option
+    ${checked_first}=  Get Text    ${Vue_Select_Items}
+    Should Be Equal    ${checked_first}    First Option
 
     Close Browser
 
 TC06 - Editable Custom Dropdown
     Log To Console    S1: Open https://react.semantic-ui.com/maximize/dropdown-example-search-selection/
-        Open Browser  ${url_tc6}  ${browser}
+    Open Browser  ${url_tc6}  ${browser}
         
     Log To Console    S2: Enter and select “Algeria” option
-        Click Element    ${React_Select_Main}
-        Click Element    ${React_Select_Algeria}
+    Click Element    ${React_Select_Main}
+    Click Element    ${React_Select_Algeria}
         
     Log To Console    S3: Verify “Algeria” is selected
-        ${checked_Algeria}  Get Text    ${React_Select_SelectedAlgeria}
-        Should Be Equal    ${checked_Algeria}    Algeria
+    ${checked_Algeria}  Get Text    ${React_Select_SelectedAlgeria}
+    Should Be Equal    ${checked_Algeria}    Algeria
         
     Log To Console    S4: Enter and select “Belize” option
-        Click Element    ${React_Select_SelectedAlgeria}
-        Click Element    ${React_Select_Belize}
+    Click Element    ${React_Select_SelectedAlgeria}
+    Click Element    ${React_Select_Belize}
 
     Log To Console    S5: Verify “Belize” is selected
-        ${checked_Belize}  Get Text    ${React_Select_SelectedBelize}
-        Should Be Equal    ${checked_Belize}    Belize
+    ${checked_Belize}  Get Text    ${React_Select_SelectedBelize}
+    Should Be Equal    ${checked_Belize}    Belize
 
     Log To Console    S6: Enter and select “American Samoa” option
-        Click Element    ${React_Select_SelectedBelize}
-        Click Element    ${React_Select_AS}
+    Click Element    ${React_Select_SelectedBelize}
+    Click Element    ${React_Select_AS}
 
     Log To Console    S7: Verify “American Samoa” is selected
-        ${checked_AS}  Get Text    ${React_Select_SelectedAS}
-        Should Be Equal    ${checked_AS}    American Samoa
+    ${checked_AS}  Get Text    ${React_Select_SelectedAS}
+    Should Be Equal    ${checked_AS}    American Samoa
 
     Close Browser
 *** Keywords ***

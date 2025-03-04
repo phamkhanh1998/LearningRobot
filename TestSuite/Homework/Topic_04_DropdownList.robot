@@ -21,13 +21,9 @@ ${Demoqa_Textbox_LastName}  //input[@id='lastName']
 ${Demoqa_Textbox_Email}  //input[@id='userEmail']
 ${Demoqa_Textbox_Number}  //input[@id='userNumber']
 ${Demoqa_Textbox_Date}  //input[@id='dateOfBirthInput']
-${Demoqa_Textbox_Subject}  //div[@id='subjectsContainer']
-${Demoqa_Checkbox_Male}  //input[@value='Male']
-${Demoqa_Checkbox_Female}  //input[@value='Female']
-${Demoqa_Checkbox_Other}  //input[@value='Other']
-${Demoqa_Checkbox_Sports}  //input[@id='hobbies-checkbox-1']
-${Demoqa_Checkbox_Reading}  //input[@id='hobbies-checkbox-2']
-${Demoqa_Checkbox_Music}  //input[@id='hobbies-checkbox-3']
+${Demoqa_Textbox_Subject}  //input[@id='subjectsInput']
+${Demoqa_Checkbox_Male}  //label[string()='Male']
+${Demoqa_Checkbox_Sports}  //label[string()='Sports']
 ${Demoqa_UploadFile_Picture}  //input[@id='uploadPicture']
 ${Demoqa_Button_Submit}  //button[@id='submit']
 ${Demoqa_TextArea_Address}  //textarea[@id='currentAddress']
@@ -93,26 +89,36 @@ TC01 - Default Dropdown
 
 TC02 - Custom Dropdown - React + APM => Not yet
     Log To Console    S1: Open https://demoqa.com/forms
-        Open Browser  ${url_tc2}  ${browser}
-        Maximize Browser Window
-        Click Element    ${Demoqa_Span_Form}
+    Open Browser  ${url_tc2}  ${browser}
+    Maximize Browser Window
+    Click Element    ${Demoqa_Span_Form}
 
     Log To Console    S2: Nhập toàn bộ thông tin vào form
-        Input Text  ${Demoqa_Textbox_FirstName}  Pham
-        Input Text  ${Demoqa_Textbox_LastName}  Khanh
-        Input Text  ${Demoqa_Textbox_Email}  phamkhanh@gmail.com
-        #Select Radio Button  gender  Male
-        Input Text  ${Demoqa_Textbox_Number}  0337409826
-        Input Text  ${Demoqa_Textbox_Date}  07 April 1998
-        #Input Text  ${Demoqa_Textbox_Subject}  English
-        Press Keys  ${Demoqa_Textbox_Subject}  ENTER
-        Select Checkbox    ${Demoqa_Checkbox_Sports}
-        Choose File  ${Demoqa_UploadFile_Picture}  C:\Users\xghus\OneDrive\Pictures\3.jpg
-        Input Text    ${Demoqa_TextArea_Address}  Tay Ho, Ha Noi
-        Select From List By Label    ${Demoqa_Select_State_NCR}
-        Select From List By Label    ${Demoqa_Select_City_Delhi}
-        Click Button    ${Demoqa_Button_Submit}
+    Input Text  ${Demoqa_Textbox_FirstName}  Pham
+    Input Text  ${Demoqa_Textbox_LastName}  Khanh
+    Input Text  ${Demoqa_Textbox_Email}  phamkhanh@gmail.com
+    Click Element    ${Demoqa_Checkbox_Male}
+    Input Text  ${Demoqa_Textbox_Number}  0337409826
+    Click Element  ${Demoqa_Textbox_Date}
+    Click Element    //option[@value='3']
+    Click Element    //option[@value='1998']
+    Click Element     //div[@aria-label='Choose Tuesday, April 7th, 1998']
+    Input Text  ${Demoqa_Textbox_Subject}  English
+    Press Keys  ${Demoqa_Textbox_Subject}  ENTER
+    Click Element    ${Demoqa_Checkbox_Sports}
+#    Choose File  ${Demoqa_UploadFile_Picture}  C:\Users\xghus\PycharmProjects\demorobot\DataTest\imgtest.jpg
+    Input Text    ${Demoqa_TextArea_Address}  Tay Ho, Ha Noi
+    Click Element    //div[text()='Select State']
+    Click Element    //div[text()='NCR']
+    Click Element    //div[text()='Select City']
+    Click Element    //div[text()='Delhi']
+    Click Button    ${Demoqa_Button_Submit}
 
+    Log To Console    S3: Verify
+    ${checked_form}=  Get Text    //div[@class='table-responsive']//td[text()='phamkhanh@gmail.com']
+    Should Be Equal    ${checked_form}    phamkhanh@gmail.com
+
+    Close Browser
 
 TC03 - Custom Dropdown - JQuery
     Log To Console    S1: Open https://jqueryui.com/resources/demos/selectmenu/default.html

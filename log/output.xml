@@ -1,49 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-03-03T20:41:22.723273" rpa="false" schemaversion="5">
-<suite id="s1" name="Topic 04 DropdownList" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_04_DropdownList.robot">
-<test id="s1-t1" name="TC03 - Custom Dropdown - JQuery" line="117">
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-03-04T21:51:26.858473" rpa="false" schemaversion="5">
+<suite id="s1" name="Topic 03 CheckboxRadio" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_03_CheckboxRadio.robot">
+<test id="s1-t1" name="TC04:" line="89">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S1: Open https://jqueryui.com/resources/demos/selectmenu/default.html</arg>
+<arg>S1:Access https://login.ubuntu.com/</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-03T20:41:23.068189" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-04T21:51:27.082552" elapsed="0.000000"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-03T20:41:23.068189" level="INFO">Opening browser 'chrome' to base url 'https://jqueryui.com/resources/demos/selectmenu/default.html'.</msg>
-<arg>${url_tc3}</arg>
+<msg time="2025-03-04T21:51:27.082552" level="INFO">Opening browser 'chrome' to base url 'https://login.ubuntu.com/'.</msg>
+<arg>${url_ubuntu}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-03T20:41:23.068189" elapsed="3.020284"/>
+<status status="PASS" start="2025-03-04T21:51:27.082552" elapsed="4.494808"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-03-04T21:51:31.577360" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S2: Select speed = Faster</arg>
+<arg>S2 Click i don't have an uo account</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-03T20:41:26.090485" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-04T21:51:31.577360" elapsed="0.000000"/>
 </kw>
-<kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2025-03-03T20:41:26.090485" level="INFO">Selecting options from selection list '//span[@id='speed-button']' by value Faster.</msg>
-<msg time="2025-03-03T20:41:26.272562" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-03T20:41:26.272562" level="FAIL">List with locator '//span[@id='speed-button']' not found.</msg>
-<arg>${Jquery_Select_Speed}</arg>
-<arg>Faster</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="FAIL" start="2025-03-03T20:41:26.090485" elapsed="0.182077">List with locator '//span[@id='speed-button']' not found.</status>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-04T21:51:31.577360" level="INFO">Clicking element '//label[string()='I don’t have an Ubuntu One account']'.</msg>
+<arg>//label[string()='I don’t have an Ubuntu One account']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-04T21:51:31.577360" elapsed="0.071517"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S3 Click I have an Ubuntu One account and my password is:</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-04T21:51:31.649907" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-04T21:51:31.649907" level="INFO">Clicking element '//label[@class='returning-user']'.</msg>
+<arg>//label[@class='returning-user']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-04T21:51:31.649907" elapsed="0.047593"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2025-03-03T20:41:26.272562" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-04T21:51:31.697500" elapsed="2.159882"/>
 </kw>
-<status status="FAIL" start="2025-03-03T20:41:23.068189" elapsed="3.204373">List with locator '//span[@id='speed-button']' not found.</status>
+<status status="PASS" start="2025-03-04T21:51:27.082552" elapsed="6.774830"/>
 </test>
-<status status="FAIL" start="2025-03-03T20:41:22.771924" elapsed="3.500638"/>
+<status status="PASS" start="2025-03-04T21:51:26.878145" elapsed="6.979237"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Topic 04 DropdownList">Topic 04 DropdownList</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Topic 03 CheckboxRadio">Topic 03 CheckboxRadio</stat>
 </suite>
 </statistics>
 <errors>

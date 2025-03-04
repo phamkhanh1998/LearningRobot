@@ -18,8 +18,6 @@ ${Demos_Radio_2.0}  //input[@id='engine3']
 
 ${Material_Radio_Winter}  //input[@id="mat-radio-0-input"]
 
-${Ubuntu_Radio_idonhave}  //div[@id="yui_3_5_0_3_1741008117514_91"]/input[@id='id_new_user']
-
 *** Test Cases ***
 TC01:
     Log To Console    S1:Open “https://demos.telerik.com/kendo-ui/checkbox/index” with Chrome
@@ -94,11 +92,11 @@ TC04:
     Set Selenium Implicit Wait    30
 
     Log To Console    S2 Click i don't have an uo account
-    Click Element    ${Ubuntu_Radio_idonhave}
-#    Radio Button Should Be Set To    id_new_user    create
+    Click Element    //label[string()='I don’t have an Ubuntu One account']
     
-#    Log To Console    S3 Click I have an Ubuntu One account and my password is:
-#    Select Radio Button    user-intentions    id_returning_user
+    Log To Console    S3 Click I have an Ubuntu One account and my password is:
+    Click Element    //label[@class='returning-user']
 
+    Close Browser
 
 *** Keywords ***

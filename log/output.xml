@@ -1,53 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-03-04T21:51:26.858473" rpa="false" schemaversion="5">
-<suite id="s1" name="Topic 03 CheckboxRadio" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_03_CheckboxRadio.robot">
-<test id="s1-t1" name="TC04:" line="89">
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-03-05T21:15:34.656734" rpa="false" schemaversion="5">
+<suite id="s1" name="Topic 04 DropdownList" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_04_DropdownList.robot">
+<test id="s1-t1" name="TC02 - Custom Dropdown - React + APM =&gt; Not yet" line="90">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S1:Access https://login.ubuntu.com/</arg>
+<arg>S1: Open https://demoqa.com/forms</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-04T21:51:27.082552" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-05T21:15:35.339184" elapsed="0.000000"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-04T21:51:27.082552" level="INFO">Opening browser 'chrome' to base url 'https://login.ubuntu.com/'.</msg>
-<arg>${url_ubuntu}</arg>
+<msg time="2025-03-05T21:15:35.339184" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/forms'.</msg>
+<arg>${url_tc2}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-04T21:51:27.082552" elapsed="4.494808"/>
+<status status="PASS" start="2025-03-05T21:15:35.339184" elapsed="103.865595"/>
 </kw>
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>30</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-03-04T21:51:31.577360" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>S2 Click i don't have an uo account</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-04T21:51:31.577360" elapsed="0.000000"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-05T21:17:19.205785" elapsed="0.137034"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-04T21:51:31.577360" level="INFO">Clicking element '//label[string()='I don’t have an Ubuntu One account']'.</msg>
-<arg>//label[string()='I don’t have an Ubuntu One account']</arg>
+<msg time="2025-03-05T21:17:19.350423" level="INFO">Clicking element '//span[text()='Practice Form']'.</msg>
+<arg>${Demoqa_Span_Form}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-04T21:51:31.577360" elapsed="0.071517"/>
+<status status="PASS" start="2025-03-05T21:17:19.345903" elapsed="0.542968"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${Demoqa_Button_Submit}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-03-05T21:17:19.889870" elapsed="0.486142"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S3 Click I have an Ubuntu One account and my password is:</arg>
+<arg>S2: Nhập toàn bộ thông tin vào form</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-04T21:51:31.649907" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-05T21:17:20.376857" elapsed="0.001006"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:20.378864" level="INFO">Typing text 'Pham' into text field '//input[@id='firstName']'.</msg>
+<arg>${Demoqa_Textbox_FirstName}</arg>
+<arg>Pham</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:20.378864" elapsed="0.249296"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:20.630749" level="INFO">Typing text 'Khanh' into text field '//input[@id='lastName']'.</msg>
+<arg>${Demoqa_Textbox_LastName}</arg>
+<arg>Khanh</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:20.629181" elapsed="0.454482"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:21.083663" level="INFO">Typing text 'phamkhanh@gmail.com' into text field '//input[@id='userEmail']'.</msg>
+<arg>${Demoqa_Textbox_Email}</arg>
+<arg>phamkhanh@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:21.083663" elapsed="0.270645"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-04T21:51:31.649907" level="INFO">Clicking element '//label[@class='returning-user']'.</msg>
-<arg>//label[@class='returning-user']</arg>
+<msg time="2025-03-05T21:17:21.355829" level="INFO">Clicking element '//label[string()='Male']'.</msg>
+<arg>${Demoqa_Checkbox_Male}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-04T21:51:31.649907" elapsed="0.047593"/>
+<status status="PASS" start="2025-03-05T21:17:21.354308" elapsed="0.136844"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:21.492146" level="INFO">Typing text '0337409826' into text field '//input[@id='userNumber']'.</msg>
+<arg>${Demoqa_Textbox_Number}</arg>
+<arg>0337409826</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:21.492146" elapsed="0.205816"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:21.698962" level="INFO">Clicking element '//input[@id='dateOfBirthInput']'.</msg>
+<arg>${Demoqa_Textbox_Date}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:21.698962" elapsed="0.314068"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:22.015545" level="INFO">Clicking element '//option[@value='3']'.</msg>
+<arg>//option[@value='3']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:22.014037" elapsed="0.152213"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:22.167763" level="INFO">Clicking element '//option[@value='1998']'.</msg>
+<arg>//option[@value='1998']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:22.166757" elapsed="0.152935"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:22.321696" level="INFO">Clicking element '//div[@aria-label='Choose Tuesday, April 7th, 1998']'.</msg>
+<arg>//div[@aria-label='Choose Tuesday, April 7th, 1998']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:22.320697" elapsed="0.174843"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:22.496799" level="INFO">Typing text 'English' into text field '//input[@id='subjectsInput']'.</msg>
+<arg>${Demoqa_Textbox_Subject}</arg>
+<arg>English</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:22.495540" elapsed="0.251628"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:22.749173" level="INFO">Sending key(s) ('ENTER',) to page.</msg>
+<msg time="2025-03-05T21:17:22.750064" level="INFO">Pressing special key ENTER to browser.</msg>
+<msg time="2025-03-05T21:17:22.750064" level="INFO">Releasing special key ENTER.</msg>
+<arg>None</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-03-05T21:17:22.748175" elapsed="0.071536"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:22.820714" level="INFO">Clicking element '//label[string()='Sports']'.</msg>
+<arg>${Demoqa_Checkbox_Sports}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:22.820714" elapsed="0.163811"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:22.986042" level="INFO">Sending C:\Users\xghus\OneDrive\Pictures\3.jpg to browser.</msg>
+<arg>${Demoqa_UploadFile_Picture}</arg>
+<arg>C:\\Users\\xghus\\OneDrive\\Pictures\\3.jpg</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:22.984525" elapsed="0.129297"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:23.115672" level="INFO">Typing text 'Tay Ho, Ha Noi' into text field '//textarea[@id='currentAddress']'.</msg>
+<arg>${Demoqa_TextArea_Address}</arg>
+<arg>Tay Ho, Ha Noi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:23.113822" elapsed="0.273367"/>
+</kw>
+<kw name="Scroll To The Bottom">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:23.398101" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-05T21:17:23.395715" elapsed="0.027547"/>
+</kw>
+<status status="PASS" start="2025-03-05T21:17:23.388194" elapsed="0.036625"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:23.426859" level="INFO">Clicking element '//div[text()='Select State']'.</msg>
+<arg>//div[text()='Select State']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:23.425828" elapsed="0.204853"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:23.630681" level="INFO">Clicking element '//div[text()='NCR']'.</msg>
+<arg>//div[text()='NCR']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:23.630681" elapsed="0.121673"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:23.753479" level="INFO">Clicking element '//div[text()='Select City']'.</msg>
+<arg>//div[text()='Select City']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:23.753479" elapsed="0.160626"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:23.917629" level="INFO">Clicking element '//div[text()='Delhi']'.</msg>
+<arg>//div[text()='Delhi']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:23.915614" elapsed="0.168148"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-05T21:17:29.096464" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-05T21:17:24.083762" elapsed="5.012702"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//div[@class='practice-form-wrapper']/following-sibling::div</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-03-05T21:17:29.097500" elapsed="0.292936"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:29.391439" level="INFO">Clicking button '//button[@id='submit']'.</msg>
+<arg>${Demoqa_Button_Submit}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-05T21:17:29.390436" elapsed="0.107567"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S3: Verify</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-05T21:17:29.499244" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-05T21:17:29.542954" level="INFO">Element '//div[@class='table-responsive']//td[text()='phamkhanh@gmail.com']' is displayed.</msg>
+<arg>//div[@class='table-responsive']//td[text()='phamkhanh@gmail.com']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-05T21:17:29.499244" elapsed="0.043710"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-04T21:51:31.697500" elapsed="2.159882"/>
+<status status="PASS" start="2025-03-05T21:17:29.544139" elapsed="3.033413"/>
 </kw>
-<status status="PASS" start="2025-03-04T21:51:27.082552" elapsed="6.774830"/>
+<status status="PASS" start="2025-03-05T21:15:35.338092" elapsed="117.239460"/>
 </test>
-<status status="PASS" start="2025-03-04T21:51:26.878145" elapsed="6.979237"/>
+<status status="PASS" start="2025-03-05T21:15:34.711869" elapsed="117.866689"/>
 </suite>
 <statistics>
 <total>
@@ -56,7 +206,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Topic 03 CheckboxRadio">Topic 03 CheckboxRadio</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Topic 04 DropdownList">Topic 04 DropdownList</stat>
 </suite>
 </statistics>
 <errors>

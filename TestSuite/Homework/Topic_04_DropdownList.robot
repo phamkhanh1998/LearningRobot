@@ -92,6 +92,7 @@ TC02 - Custom Dropdown - React + APM => Not yet
     Open Browser  ${url_tc2}  ${browser}
     Maximize Browser Window
     Click Element    ${Demoqa_Span_Form}
+    Scroll Element Into View    ${Demoqa_Button_Submit}
 
     Log To Console    S2: Nhập toàn bộ thông tin vào form
     Input Text  ${Demoqa_Textbox_FirstName}  Pham
@@ -104,10 +105,11 @@ TC02 - Custom Dropdown - React + APM => Not yet
     Click Element    //option[@value='1998']
     Click Element     //div[@aria-label='Choose Tuesday, April 7th, 1998']
     Input Text  ${Demoqa_Textbox_Subject}  English
-    Press Keys  ${Demoqa_Textbox_Subject}  ENTER
+    Press Keys  None  ENTER
     Click Element    ${Demoqa_Checkbox_Sports}
-#    Choose File  ${Demoqa_UploadFile_Picture}  C:\Users\xghus\PycharmProjects\demorobot\DataTest\imgtest.jpg
+    Choose File  ${Demoqa_UploadFile_Picture}  ${EXECDIR}\\TestData\\img.jpg
     Input Text    ${Demoqa_TextArea_Address}  Tay Ho, Ha Noi
+    Scroll To The Bottom
     Click Element    //div[text()='Select State']
     Click Element    //div[text()='NCR']
     Click Element    //div[text()='Select City']
@@ -115,8 +117,7 @@ TC02 - Custom Dropdown - React + APM => Not yet
     Click Button    ${Demoqa_Button_Submit}
 
     Log To Console    S3: Verify
-    ${checked_form}=  Get Text    //div[@class='table-responsive']//td[text()='phamkhanh@gmail.com']
-    Should Be Equal    ${checked_form}    phamkhanh@gmail.com
+    Element Should Be Visible    //div[@class='table-responsive']//td[text()='phamkhanh@gmail.com']
 
     Close Browser
 
@@ -241,4 +242,17 @@ TC06 - Editable Custom Dropdown
 
     Close Browser
 *** Keywords ***
+Scroll Up To The Top
+    Execute Javascript      window.scrollTo(0, -document.body.scrollHeight)
 
+Scroll To The Bottom
+    Execute Javascript      window.scrollTo(0, document.body.scrollHeight)
+
+Scroll To Middle Of Page
+    Execute Javascript      window.scrollTo(0, document.body.scrollHeight/3)
+
+Scroll To Element
+    [Arguments]      ${xpath}
+    ${webElement}       Get WebElement    ${xpath}
+    Execute Javascript      arguments[0].scrollIntoView(true);      ARGUMENTS        ${webelement}
+    Sleep   0.25

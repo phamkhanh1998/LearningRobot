@@ -58,7 +58,8 @@ TC02:
     Should Be Equal    ${checked_value2}    true
     
     Log To Console    S5:Verify 1.4 Petrol, 92kW  is NOT selected
-    Should Be Equal As Strings    ${checked_value}    true
+    ${checked_value}=  Get Element Attribute    ${Demos_Radio_1.4}    checked
+    Should Be Equal As Strings    ${checked_value}    None
 
     Close Browser
     
@@ -72,6 +73,7 @@ TC03:
     Click Element    ${Material_Radio_Winter}
     
     Log To Console    S3:Verify the Winter option is selected
+#   Sua theo get element atribute
     Radio Button Should Be Set To    mat-radio-group-0    Winter
     
     Log To Console    S4:Click on the Summer option
@@ -96,6 +98,8 @@ TC04:
     
     Log To Console    S3 Click I have an Ubuntu One account and my password is:
     Click Element    //label[@class='returning-user']
+
+    # dung elemetn should not be visible
 
     Close Browser
 

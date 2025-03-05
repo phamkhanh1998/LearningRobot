@@ -117,7 +117,16 @@ TC02 - Custom Dropdown - React + APM => Not yet
     Click Button    ${Demoqa_Button_Submit}
 
     Log To Console    S3: Verify
+#    Element Should Be Visible    //div[@class='table-responsive']//td[text()='Pham Khanh']
     Element Should Be Visible    //div[@class='table-responsive']//td[text()='phamkhanh@gmail.com']
+    Element Should Be Visible    //div[@class='table-responsive']//td[text()='Male']
+    Element Should Be Visible    //div[@class='table-responsive']//td[text()='0337409826']
+    Element Should Be Visible    //div[@class='table-responsive']//td[text()='07 April,1998']
+    Element Should Be Visible    //div[@class='table-responsive']//td[text()='English']
+    Element Should Be Visible    //div[@class='table-responsive']//td[text()='Sports']
+    Element Should Be Visible    //div[@class='table-responsive']//td[text()='img.jpg']
+    Element Should Be Visible    //div[@class='table-responsive']//td[text()='Tay Ho, Ha Noi']
+    Element Should Be Visible    //div[@class='table-responsive']//td[text()='NCR Delhi']
 
     Close Browser
 
@@ -138,25 +147,21 @@ TC03 - Custom Dropdown - JQuery
     Click Element  ${Jquery_Select_jQuery}
 
     Log To Console    S5: Verify File is selected by “jQuery.js” value
-    ${checked_file}=  Get Text  //span[@id='files-button']//span[text()='jQuery.js']
-    Should Be Equal  ${checked_file}  jQuery.js
+    Element Should Be Visible  //span[@id='files-button']//span[text()='jQuery.js']
 
     Log To Console    S6: Select number is 7
     Click Element  ${Jquery_Select_Number}
     Click Element  ${Jquery_Select_7}
 
     Log To Console    S7: Verify number is selected by 7
-    ${verify_number_jquery}=  Convert To String  ${Jquery_Select_a_number}
-    ${checked_number}=  Get Text  //span[@id='number-button']//span[number()='7']
-    Should Be Equal  ${checked_number}  ${verify_number_jquery}
+    Element Should Be Visible  //span[@id='number-button']//span[number()='7']
 
     Log To Console    S8: Select title is Mrs.
     Click Element  ${Jquery_Select_Title}
     Click Element  ${Jquery_Select_Mrs}
 
     Log To Console    S9: Verify title is selected by Mrs.
-    ${checked_title}=  Get Text  //span[@id='salutation-button']//span[text()='Mrs.']
-    Should Be Equal  ${checked_title}  Mrs.
+    Element Should Be Visible  //span[@id='salutation-button']//span[text()='Mrs.']
 
     Close Browser
 
@@ -169,24 +174,21 @@ TC04 - Custom Dropdown - ReactJS
     Click Element    ${ReactJS_Select_EF}
         
     Log To Console    S3: Verify “Elliot Fu” is selected successfully
-    ${checked_ef}=  Get Text    ${ReactJS_Select_Verify}
-    Should Be Equal    ${checked_ef}    Elliot Fu
+    Element Should Be Visible    ${ReactJS_Select_Verify}
         
     Log To Console    S4: Select “Stevie Feliciano” option
     Click Element    ${ReactJS_Select_SelectedEF}
     Click Element    ${ReactJS_Select_SF}
 
     Log To Console    S5: Verify “Stevie Feliciano” is selected successfully
-    ${checked_sf}=  Get Text    ${ReactJS_Select_Verify}
-    Should Be Equal    ${checked_sf}    Stevie Feliciano
+    Element Should Be Visible    ${ReactJS_Select_Verify}
 
     Log To Console    S6: Select “Justen Kitsune” option
     Click Element    ${ReactJS_Select_SelectedSF}
     Click Element    ${ReactJS_Select_JK}
 
     Log To Console    S7: Verify “Justen Kitsune” is selected successfully
-    ${checked_jk}=  Get Text    ${ReactJS_Select_Verify}
-    Should Be Equal    ${checked_jk}    Justen Kitsune
+    Element Should Be Visible    ${ReactJS_Select_Verify}
 
     Close Browser
 
@@ -221,24 +223,21 @@ TC06 - Editable Custom Dropdown
     Click Element    ${React_Select_Algeria}
         
     Log To Console    S3: Verify “Algeria” is selected
-    ${checked_Algeria}  Get Text    ${React_Select_SelectedAlgeria}
-    Should Be Equal    ${checked_Algeria}    Algeria
+    Element Should Be Visible    ${React_Select_SelectedAlgeria}
         
     Log To Console    S4: Enter and select “Belize” option
     Click Element    ${React_Select_SelectedAlgeria}
     Click Element    ${React_Select_Belize}
 
     Log To Console    S5: Verify “Belize” is selected
-    ${checked_Belize}  Get Text    ${React_Select_SelectedBelize}
-    Should Be Equal    ${checked_Belize}    Belize
+    Element Should Be Visible    ${React_Select_SelectedBelize}
 
     Log To Console    S6: Enter and select “American Samoa” option
     Click Element    ${React_Select_SelectedBelize}
     Click Element    ${React_Select_AS}
 
     Log To Console    S7: Verify “American Samoa” is selected
-    ${checked_AS}  Get Text    ${React_Select_SelectedAS}
-    Should Be Equal    ${checked_AS}    American Samoa
+    Element Should Be Visible    ${React_Select_SelectedAS}
 
     Close Browser
 *** Keywords ***

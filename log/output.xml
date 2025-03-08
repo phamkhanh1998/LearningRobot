@@ -1,19 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-02-21T22:13:20.163602" rpa="false" schemaversion="5">
-<suite id="s1" name="Topic 03 CheckboxRadio" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_03_CheckboxRadio.robot">
-<test id="s1-t1" name="TC02:" line="33">
-<status status="FAIL" start="2025-02-21T22:13:20.405152" elapsed="0.001006">Test cannot be empty.</status>
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-03-06T22:38:51.295475" rpa="false" schemaversion="5">
+<suite id="s1" name="Topic 05 Alert" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_05_Alert.robot">
+<test id="s1-t1" name="TC03 - Prompt Alert" line="54">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S1: Open https://automationfc.github.io/basic-form/index.html</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-06T22:38:51.544550" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-06T22:38:51.544550" level="INFO">Opening browser 'chrome' to base url 'https://automationfc.github.io/basic-form/index.html'.</msg>
+<arg>${url_tc}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-06T22:38:51.544550" elapsed="3.572787"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-06T22:38:55.117337" elapsed="0.040728"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S2: Click to “Click for JS Confirm” button</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-06T22:38:55.159178" elapsed="0.000000"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-06T22:38:55.160182" level="INFO">Clicking button '//button[text()='Click for JS Prompt']'.</msg>
+<arg>${AutomationFC_Button_JSPrompt}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-06T22:38:55.159178" elapsed="0.161661"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S3: Wait for alert present with “I am a JS prompt” message</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-06T22:38:55.320839" elapsed="0.001395"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S4: Enter your NAME into alert textbox, Accept alert</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-06T22:38:55.322234" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text Into Alert" owner="SeleniumLibrary">
+<arg>Hello World!</arg>
+<doc>Types the given ``text`` into an input field in an alert.</doc>
+<status status="PASS" start="2025-03-06T22:38:55.322234" elapsed="0.006023"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S5: Verify “You entered: NAME” message displays</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-06T22:38:55.328257" elapsed="0.001173"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-06T22:38:55.550904" level="INFO">Element '//p[@id='result']' contains text 'You entered: Hello World!'.</msg>
+<arg>${AutomationFC_Verify}</arg>
+<arg>You entered: Hello World!</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-03-06T22:38:55.330431" elapsed="0.220473"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-06T22:38:55.550904" elapsed="2.237000"/>
+</kw>
+<status status="PASS" start="2025-03-06T22:38:51.544550" elapsed="6.243354"/>
 </test>
-<status status="FAIL" start="2025-02-21T22:13:20.175408" elapsed="0.230750"/>
+<status status="PASS" start="2025-03-06T22:38:51.336356" elapsed="6.451548"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Topic 03 CheckboxRadio">Topic 03 CheckboxRadio</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Topic 05 Alert">Topic 05 Alert</stat>
 </suite>
 </statistics>
 <errors>

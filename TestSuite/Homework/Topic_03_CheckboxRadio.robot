@@ -18,6 +18,8 @@ ${Demos_Radio_2.0}  //input[@id='engine3']
 
 ${Material_Radio_Winter}  //input[@id="mat-radio-0-input"]
 
+${GGsheet_Radio_CanTho}  //div[@data-value='Cần Thơ']
+
 *** Test Cases ***
 TC01:
     Log To Console    S1:Open “https://demos.telerik.com/kendo-ui/checkbox/index” with Chrome
@@ -73,7 +75,6 @@ TC03:
     Click Element    ${Material_Radio_Winter}
     
     Log To Console    S3:Verify the Winter option is selected
-#   Sua theo get element atribute
     Radio Button Should Be Set To    mat-radio-group-0    Winter
     
     Log To Console    S4:Click on the Summer option
@@ -99,8 +100,24 @@ TC04:
     Log To Console    S3 Click I have an Ubuntu One account and my password is:
     Click Element    //label[@class='returning-user']
 
-    # dung elemetn should not be visible
-
     Close Browser
+
+
+
+TC05: Advance
+    Log To Console    Step 01: Open brower with link
+    Open Browser  ${url_ggsheet}  ${browser}
+    Maximize Browser Window
+    
+    Log To Console    Step 02: Verify “Cần Thơ” radio is not selected
+    ${checked_value}  Get Element Attribute    //div[@id='i15']    tabindex
+    Should Be Equal    ${checked_value}    -1
+    
+    Log To Console    Step 03: Select “Cần Thơ” option
+    Click Element    ${GGsheet_Radio_CanTho}
+    
+    Log To Console    Step 04: Verify “Cần Thơ” option is selected
+    ${checked_value}  Get Element Attribute    //div[@id='i15']    tabindex
+    Should Be Equal    ${checked_value}    0
 
 *** Keywords ***

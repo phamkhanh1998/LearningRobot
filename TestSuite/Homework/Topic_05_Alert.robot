@@ -2,11 +2,15 @@
 Library  SeleniumLibrary
 Library  String
 Library    Telnet
+Library    Process
 
 *** Variables ***
 ${url_tc}  https://automationfc.github.io/basic-form/index.html
-${url_tc4}  http://admin:admin@the-internet.herokuapp.com/basic_auth
+${url_tc4}  http://${user_name}:${password}@the-internet.herokuapp.com/basic_auth
+${url_tc6}  http://the-internet.herokuapp.com/basic_auth
 ${browser}  chrome
+${user_name}  admin
+${password}  admin
 
 ${AutomationFC_Button_JSAlert}  //button[text()='Click for JS Alert']
 ${AutomationFC_Button_JSConfirm}  //button[text()='Click for JS Confirm']
@@ -24,6 +28,7 @@ TC01 - Accept Alert
     Click Button    ${AutomationFC_Button_JSAlert}
     
     Log To Console    S3: Wait for alert present with “Click for JS Alert” message
+    Alert Should Be Present  I am a JS Alert  LEAVE
 
     Log To Console    S4: Accept alert
     Handle Alert  Accept
@@ -42,6 +47,7 @@ TC02 - Confirm Alert
     Click Button    ${AutomationFC_Button_JSConfirm}
     
     Log To Console    S3: Wait for alert present with “I am a JS Confirm” message
+    Alert Should Be Present  I am a JS Confirm  LEAVE
 
     Log To Console    S4: Accept alert
     Handle Alert  Accept
@@ -60,6 +66,7 @@ TC03 - Prompt Alert
     Click Button    ${AutomationFC_Button_JSPrompt}
     
     Log To Console    S3: Wait for alert present with “I am a JS prompt” message
+    Alert Should Be Present  I am a JS prompt  LEAVE
     
     Log To Console    S4: Enter your NAME into alert textbox, Accept alert
     Input Text Into Alert    Hello World!
@@ -75,4 +82,40 @@ TC04 - Authentication Alert 1
     Maximize Browser Window
     
     Log To Console    S2: Enter username/password   (admin/admin)
+    
+    Log To Console    S3: Verify “Congratulations! You must have the proper credentials.” message displays
+    Page Should Contain    Congratulations! You must have the proper credentials.
+
+    Close Browser
+
+#Alert with AutoIT
+#    Open Browser  ${url_tc4}  ${browser}
+#    Maximize Browser Window
+#    Run Process  ${EXECDIR}\\AutoIT\\authen_chrome.exe  admin  admin
+
+TC05 - Authentication Alert 2
+    Log To Console    S1: Open http://the-internet.herokuapp.com/basic_auth
+    Open Browser  ${url_tc4}  ${browser}
+    Maximize Browser Window
+
+    Log To Console    S2: Enter username/password   (admin/admin)
+
+    Log To Console    S3: Verify “Congratulations! You must have the proper credentials.” message displays
+    Page Should Contain    Congratulations! You must have the proper credentials.
+
+    Close Browser
+
+TC06 - Authentication Alert By AutoIT
+    Log To Console    S1: Open http://the-internet.herokuapp.com/basic_auth
+    Open Browser  ${url_tc6}  ${browser}
+    Maximize Browser Window
+
+    Log To Console    S2: Enter username/password   (admin/admin)  by AutoIT
+    Run Process  ${EXECDIR}\\AutoIT\\authen_chrome.exe  admin  admin
+
+    Log To Console    Verify “Congratulations! You must have the proper credentials.” message displays
+    Page Should Contain    Congratulations! You must have the proper credentials.
+
+    Close Browser
+
 *** Keywords ***

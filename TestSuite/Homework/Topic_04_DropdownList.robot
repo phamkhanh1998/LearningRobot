@@ -41,6 +41,10 @@ ${Jquery_Select_7}  //div[text()='7']
 ${Jquery_Select_Number}  //span[@id='number-button']
 ${Jquery_Select_Mrs}  //div[text()='Mrs.']
 ${Jquery_Select_Title}  //span[@id='salutation-button']
+${Jquery_Verify_Faster}  //span[@id='speed-button']//span[text()='Faster']
+${Jquery_Verify_Jqueryjs}  //span[@id='files-button']//span[text()='jQuery.js']
+${Jquery_Verify_7}  //span[@id='number-button']//span[number()='7']
+${Jquery_Verify_Mrs}  //span[@id='salutation-button']//span[text()='Mrs.']
 
 ${ReactJS_Select_Main}  //div[text()='Select Friend']
 ${ReactJS_Select_SelectedEF}  //div[text()='Elliot Fu']
@@ -49,6 +53,9 @@ ${ReactJS_Select_EF}  //span[text()='Elliot Fu']
 ${ReactJS_Select_SF}  //span[text()='Stevie Feliciano']
 ${ReactJS_Select_JK}  //span[text()='Justen Kitsune']
 ${ReactJS_Select_Verify}  //div[@class='divider text']
+${ReactJS_Select_VerifyEF}  //div[@class='ui fluid selection dropdown']/div[string()='Elliot Fu']
+${ReactJS_Select_VerifySF}  //div[@class='ui fluid selection dropdown']/div[string()='Stevie Feliciano']
+${ReactJS_Select_VerifyJK}  //div[@class='ui fluid selection dropdown']/div[string()='Justen Kitsune']
 
 ${Vue_Select_Items}  //div[@class='btn-group']
 ${Vue_Select_FirstOp}  //a[contains(text(),'First')]
@@ -139,29 +146,28 @@ TC03 - Custom Dropdown - JQuery
     Click Element  ${Jquery_Select_Fast}
 
     Log To Console    S3: Verify dropdown is selected by “Faster” value
-    ${checked_speed}=  Get Text  //span[@id='speed-button']//span[text()='Faster']
-    Should Be Equal  ${checked_speed}  Faster
+    Element Should Be Visible    ${Jquery_Verify_Faster}
 
     Log To Console    S4: Select File = jQuery.js
     Click Element  ${Jquery_Select_File}
     Click Element  ${Jquery_Select_jQuery}
 
     Log To Console    S5: Verify File is selected by “jQuery.js” value
-    Element Should Be Visible  //span[@id='files-button']//span[text()='jQuery.js']
+    Element Should Be Visible  ${Jquery_Verify_Jqueryjs}
 
     Log To Console    S6: Select number is 7
     Click Element  ${Jquery_Select_Number}
     Click Element  ${Jquery_Select_7}
 
     Log To Console    S7: Verify number is selected by 7
-    Element Should Be Visible  //span[@id='number-button']//span[number()='7']
+    Element Should Be Visible  ${Jquery_Verify_7}
 
     Log To Console    S8: Select title is Mrs.
     Click Element  ${Jquery_Select_Title}
     Click Element  ${Jquery_Select_Mrs}
 
     Log To Console    S9: Verify title is selected by Mrs.
-    Element Should Be Visible  //span[@id='salutation-button']//span[text()='Mrs.']
+    Element Should Be Visible  ${Jquery_Verify_Mrs}
 
     Close Browser
 
@@ -174,21 +180,21 @@ TC04 - Custom Dropdown - ReactJS
     Click Element    ${ReactJS_Select_EF}
         
     Log To Console    S3: Verify “Elliot Fu” is selected successfully
-    Element Should Be Visible    ${ReactJS_Select_Verify}
+    Element Should Be Visible    ${ReactJS_Select_VerifyEF}
         
     Log To Console    S4: Select “Stevie Feliciano” option
     Click Element    ${ReactJS_Select_SelectedEF}
     Click Element    ${ReactJS_Select_SF}
 
     Log To Console    S5: Verify “Stevie Feliciano” is selected successfully
-    Element Should Be Visible    ${ReactJS_Select_Verify}
+    Element Should Be Visible    ${ReactJS_Select_VerifySF}
 
     Log To Console    S6: Select “Justen Kitsune” option
     Click Element    ${ReactJS_Select_SelectedSF}
     Click Element    ${ReactJS_Select_JK}
 
     Log To Console    S7: Verify “Justen Kitsune” is selected successfully
-    Element Should Be Visible    ${ReactJS_Select_Verify}
+    Element Should Be Visible    ${ReactJS_Select_VerifyJK}
 
     Close Browser
 

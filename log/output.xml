@@ -1,194 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-03-10T22:18:54.832942" rpa="false" schemaversion="5">
-<suite id="s1" name="Topic 03 CheckboxRadio" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_03_CheckboxRadio.robot">
-<test id="s1-t1" name="TC03:" line="68">
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-03-12T21:47:55.747265" rpa="false" schemaversion="5">
+<suite id="s1" name="Topic 06 UploadFile" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_06_UploadFile.robot">
+<test id="s1-t1" name="TC02 - Handle Upload File By Choose File Action" line="49">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S1:Open “https://material.angular.io/components/radio/examples” with Chrome</arg>
+<arg>S1: Open https://blueimp.github.io/jQuery-File-Upload/</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-10T22:18:55.056492" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-12T21:47:55.976355" elapsed="0.000000"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-10T22:18:55.057515" level="INFO">Opening browser 'chrome' to base url 'https://material.angular.io/components/radio/examples'.</msg>
-<arg>${url_material}</arg>
+<msg time="2025-03-12T21:47:55.988977" level="INFO">Opening browser 'chrome' to base url 'https://blueimp.github.io/jQuery-File-Upload/'.</msg>
+<arg>${url_tc2}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-10T22:18:55.057515" elapsed="4.528937"/>
+<status status="PASS" start="2025-03-12T21:47:55.976355" elapsed="2.452889"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-03-10T22:18:59.587540" elapsed="0.034228"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>30</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-03-10T22:18:59.622764" elapsed="0.004304"/>
+<status status="PASS" start="2025-03-12T21:47:58.430337" elapsed="0.034157"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S2:Click on the Winter option</arg>
+<arg>S2: Upload 3 images consequently</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-10T22:18:59.629136" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-12T21:47:58.464494" elapsed="0.001000"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2025-03-12T21:47:58.466491" level="INFO">Sending C:\Users\xghus\PycharmProjects\demorobot\TestData\img.jpg to browser.</msg>
+<arg>${Bluimp_Button_AddFiles}</arg>
+<arg>${file_path1}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2025-03-12T21:47:58.465494" elapsed="0.073152"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2025-03-12T21:47:58.539711" level="INFO">Sending C:\Users\xghus\PycharmProjects\demorobot\TestData\img2.jpg to browser.</msg>
+<arg>${Bluimp_Button_AddFiles}</arg>
+<arg>${file_path2}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2025-03-12T21:47:58.539711" elapsed="0.041766"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2025-03-12T21:47:58.582480" level="INFO">Sending C:\Users\xghus\PycharmProjects\demorobot\TestData\img3.jpg to browser.</msg>
+<arg>${Bluimp_Button_AddFiles}</arg>
+<arg>${file_path3}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2025-03-12T21:47:58.582480" elapsed="0.041470"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S3: Verify 3 names of images show correctly</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-12T21:47:58.626094" elapsed="0.002037"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T21:47:58.652862" level="INFO">Current page contains element '//p[text()='img.jpg']'.</msg>
+<arg>${Verify_Img}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T21:47:58.629130" elapsed="0.024691"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T21:47:58.667901" level="INFO">Current page contains element '//p[text()='img2.jpg']'.</msg>
+<arg>${Verify_Img2}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T21:47:58.653821" elapsed="0.014080"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T21:47:58.680670" level="INFO">Current page contains element '//p[text()='img3.jpg']'.</msg>
+<arg>${Verify_Img3}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T21:47:58.668905" elapsed="0.011765"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>S4: Click on Start button</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-12T21:47:58.680670" elapsed="0.001406"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-10T22:18:59.631656" level="INFO">Clicking element '//input[@id="mat-radio-0-input"]'.</msg>
-<arg>${Material_Radio_Winter}</arg>
+<msg time="2025-03-12T21:47:58.682076" level="INFO">Clicking element '//p[text()='img.jpg']/../..//span[text()='Start']'.</msg>
+<arg>${Bluimp_Button_Start}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-10T22:18:59.630639" elapsed="0.102759"/>
+<status status="PASS" start="2025-03-12T21:47:58.682076" elapsed="0.064458"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T21:47:58.746534" level="INFO">Clicking element '//p[text()='img2.jpg']/../..//span[text()='Start']'.</msg>
+<arg>${Bluimp_Button_Start2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T21:47:58.746534" elapsed="0.028272"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T21:47:58.774806" level="INFO">Clicking element '//p[text()='img3.jpg']/../..//span[text()='Start']'.</msg>
+<arg>${Bluimp_Button_Start3}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T21:47:58.774806" elapsed="0.050351"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T21:48:03.825344" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T21:47:58.825157" elapsed="5.000187"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S3:Verify the Winter option is selected</arg>
+<arg>S5: Verify 3 images are uploaded successfully</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-10T22:18:59.733398" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-12T21:48:03.826574" elapsed="0.000000"/>
 </kw>
-<kw name="Radio Button Should Be Set To" owner="SeleniumLibrary">
-<msg time="2025-03-10T22:18:59.734419" level="INFO">Verifying radio button 'mat-radio-group-0' has selection 'Winter'.</msg>
-<arg>mat-radio-group-0</arg>
-<arg>Winter</arg>
-<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
-<status status="PASS" start="2025-03-10T22:18:59.733398" elapsed="0.032032"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T21:48:03.845873" level="INFO">Current page contains element '//a[text()='img.jpg']/../../..//span[text()='Delete']'.</msg>
+<arg>${Bluimp_Verify_Img}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T21:48:03.827587" elapsed="0.018286"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>S4:Click on the Summer option</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-10T22:18:59.766610" elapsed="0.000000"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T21:48:03.856012" level="INFO">Current page contains element '//a[text()='img2.jpg']/../../..//span[text()='Delete']'.</msg>
+<arg>${Bluimp_Verify_Img2}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T21:48:03.846877" elapsed="0.009135"/>
 </kw>
-<kw name="Select Radio Button" owner="SeleniumLibrary">
-<msg time="2025-03-10T22:18:59.766610" level="INFO">Selecting 'Summer' from radio button 'mat-radio-group-0'.</msg>
-<msg time="2025-03-10T22:19:00.999608" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-10T22:19:00.999608" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input type="radio" class="mdc-radio__native-control" id="mat-radio-2-input" name="mat-radio-group-0" value="Summer" tabindex="-1"&gt; is not clickable at point (339, 550). Other element would receive the click: &lt;div _ngcontent-ng-c2060896629="" class="popup"&gt;...&lt;/div&gt;
-  (Session info: chrome=133.0.6943.142)
-Stacktrace:
-	GetHandleVerifier [0x00007FF7777CC6A5+28789]
-	(No symbol) [0x00007FF777735B20]
-	(No symbol) [0x00007FF7775C8F9A]
-	(No symbol) [0x00007FF7776271E9]
-	(No symbol) [0x00007FF777624BA2]
-	(No symbol) [0x00007FF777621C51]
-	(No symbol) [0x00007FF777620B51]
-	(No symbol) [0x00007FF777612314]
-	(No symbol) [0x00007FF77764732A]
-	(No symbol) [0x00007FF777611BC6]
-	(No symbol) [0x00007FF777647540]
-	(No symbol) [0x00007FF77766F7E3]
-	(No symbol) [0x00007FF777647103]
-	(No symbol) [0x00007FF77760FFC0]
-	(No symbol) [0x00007FF777611273]
-	GetHandleVerifier [0x00007FF777B11AED+3458237]
-	GetHandleVerifier [0x00007FF777B2829C+3550316]
-	GetHandleVerifier [0x00007FF777B1DB9D+3507565]
-	GetHandleVerifier [0x00007FF777892C6A+841274]
-	(No symbol) [0x00007FF7777409EF]
-	(No symbol) [0x00007FF77773CB34]
-	(No symbol) [0x00007FF77773CCD6]
-	(No symbol) [0x00007FF77772C119]
-	BaseThreadInitThunk [0x00007FFA87F1E8D7+23]
-	RtlUserThreadStart [0x00007FFA89EBBF6C+44]
-</msg>
-<arg>mat-radio-group-0</arg>
-<arg>Summer</arg>
-<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
-<status status="FAIL" start="2025-03-10T22:18:59.766610" elapsed="1.343972">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input type="radio" class="mdc-radio__native-control" id="mat-radio-2-input" name="mat-radio-group-0" value="Summer" tabindex="-1"&gt; is not clickable at point (339, 550). Other element would receive the click: &lt;div _ngcontent-ng-c2060896629="" class="popup"&gt;...&lt;/div&gt;
-  (Session info: chrome=133.0.6943.142)
-Stacktrace:
-	GetHandleVerifier [0x00007FF7777CC6A5+28789]
-	(No symbol) [0x00007FF777735B20]
-	(No symbol) [0x00007FF7775C8F9A]
-	(No symbol) [0x00007FF7776271E9]
-	(No symbol) [0x00007FF777624BA2]
-	(No symbol) [0x00007FF777621C51]
-	(No symbol) [0x00007FF777620B51]
-	(No symbol) [0x00007FF777612314]
-	(No symbol) [0x00007FF77764732A]
-	(No symbol) [0x00007FF777611BC6]
-	(No symbol) [0x00007FF777647540]
-	(No symbol) [0x00007FF77766F7E3]
-	(No symbol) [0x00007FF777647103]
-	(No symbol) [0x00007FF77760FFC0]
-	(No symbol) [0x00007FF777611273]
-	GetHandleVerifier [0x00007FF777B11AED+3458237]
-	GetHandleVerifier [0x00007FF777B2829C+3550316]
-	GetHandleVerifier [0x00007FF777B1DB9D+3507565]
-	GetHandleVerifier [0x00007FF777892C6A+841274]
-	(No symbol) [0x00007FF7777409EF]
-	(No symbol) [0x00007FF77773CB34]
-	(No symbol) [0x00007FF77773CCD6]
-	(No symbol) [0x00007FF77772C119]
-	BaseThreadInitThunk [0x00007FFA87F1E8D7+23]
-	RtlUserThreadStart [0x00007FFA89EBBF6C+44]
-</status>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>S5:Verify the Summer option is selected</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-03-10T22:19:01.110582" elapsed="0.000000"/>
-</kw>
-<kw name="Radio Button Should Be Set To" owner="SeleniumLibrary">
-<arg>mat-radio-group-0</arg>
-<arg>Summer</arg>
-<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
-<status status="NOT RUN" start="2025-03-10T22:19:01.110582" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>S6:Verify the Winter option is NOT selected</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-03-10T22:19:01.110582" elapsed="0.000000"/>
-</kw>
-<kw name="Get Element Attribute" owner="SeleniumLibrary">
-<var>${checked_value}</var>
-<arg>//input[@id="mat-radio-0-input"]</arg>
-<arg>tabindex</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="NOT RUN" start="2025-03-10T22:19:01.110582" elapsed="0.000000"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${checked_value}</arg>
-<arg>-1</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2025-03-10T22:19:01.110582" elapsed="0.000000"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T21:48:03.866740" level="INFO">Current page contains element '//a[text()='img3.jpg']/../../..//span[text()='Delete']'.</msg>
+<arg>${Bluimp_Verify_Img3}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T21:48:03.856012" elapsed="0.010728"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2025-03-10T22:19:01.111973" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-12T21:48:03.866740" elapsed="2.246904"/>
 </kw>
-<status status="FAIL" start="2025-03-10T22:18:55.055437" elapsed="6.056536">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input type="radio" class="mdc-radio__native-control" id="mat-radio-2-input" name="mat-radio-group-0" value="Summer" tabindex="-1"&gt; is not clickable at point (339, 550). Other element would receive the click: &lt;div _ngcontent-ng-c2060896629="" class="popup"&gt;...&lt;/div&gt;
-  (Session info: chrome=133.0.6943.142)
-Stacktrace:
-	GetHandleVerifier [0x00007FF7777CC6A5+28789]
-	(No symbol) [0x00007FF777735B20]
-	(No symbol) [0x00007FF7775C8F9A]
-	(No symbol) [0x00007FF7776271E9]
-	(No symbol) [0x00007FF777624BA2]
-	(No symbol) [0x00007FF777621C51]
-	(No symbol) [0x00007FF777620B51]
-	(No symbol) [0x00007FF777612314]
-	(No symbol) [0x00007FF77764732A]
-	(No symbol) [0x00007FF777611BC6]
-	(No symbol) [0x00007FF777647540]
-	(No symbol) [0x00007FF77766F7E3]
-	(No symbol) [0x00007FF777647103]
-	(No symbol) [0x00007FF77760FFC0]
-	(No symbol) [0x00007FF777611273]
-	GetHandleVerifier [0x00007FF777B11AED+3458237]
-	GetHandleVerifier [0x00007FF777B2829C+3550316]
-	GetHandleVerifier [0x00007FF777B1DB9D+3507565]
-	GetHandleVerifier [0x00007FF777892C6A+841274]
-	(No symbol) [0x00007FF7777409EF]
-	(No symbol) [0x00007FF77773CB34]
-	(No symbol) [0x00007FF77773CCD6]
-	(No symbol) [0x00007FF77772C119]
-	BaseThreadInitThunk [0x00007FFA87F1E8D7+23]
-	RtlUserThreadStart [0x00007FFA89EBBF6C+44]
-</status>
+<status status="PASS" start="2025-03-12T21:47:55.976355" elapsed="10.137289"/>
 </test>
-<status status="FAIL" start="2025-03-10T22:18:54.853080" elapsed="6.260158"/>
+<status status="PASS" start="2025-03-12T21:47:55.763233" elapsed="10.350411"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Topic 03 CheckboxRadio">Topic 03 CheckboxRadio</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Topic 06 UploadFile">Topic 06 UploadFile</stat>
 </suite>
 </statistics>
 <errors>

@@ -97,4 +97,39 @@ TC03 - Handle Upload Multiple File By Choose File Action
     Page Should Contain Element    ${Bluimp_Verify_Img}
     Page Should Contain Element    ${Bluimp_Verify_Img2}
     Page Should Contain Element    ${Bluimp_Verify_Img3}
+
+
+Example - Learn Topic 10
+    [Tags]  frame1
+    Log To Console    S1: Open https://blueimp.github.io/jQuery-File-Upload/
+    Open Browser  ${url_tc2}  ${browser}
+    Maximize Browser Window
+
+    Log To Console    S2: Upload 3 images consequently
+    Choose File    ${Bluimp_Button_AddFiles}    ${file_path1}
+    Sleep  3
+    Choose File    ${Bluimp_Button_AddFiles}    ${file_path2}
+    Sleep  3
+    Choose File    ${Bluimp_Button_AddFiles}    ${file_path3}
+    Sleep  3
+
+    Log To Console    S3: Click on Start button
+#    c1
+#    ${elements}=    Get WebElements  //button/span[text()='Start']
+#    FOR  ${element}  IN  @{elements}
+#        Click Element  ${element}
+#        Sleep  3
+#    END
+#    c2
+#    ${get_len}=  Get Length  ${elements}
+#    FOR  ${index}  IN RANGE  0  ${get_len}
+#        Click Element  ${elements}[${index}]
+#    END
+    FOR  ${index}  IN RANGE  0  3
+        Click Element  //button/span[text()='Start']
+        Sleep  3
+    END
+
+    Close Browser
+
 *** Keywords ***

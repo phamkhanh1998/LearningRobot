@@ -161,7 +161,7 @@ TC05 - Window - Tabs 2
 TC06 - Demo Nopcommerce
     [Tags]  frame1
     Log To Console    S1: Open https://demo.nopcommerce.com/
-    Open Browser  https://demo.nopcommerce.com/   chrome    options=add_argument('profile-directory=Profile 2');add_argument(r'user-data-dir=C:\Program Files\Google\Chrome\Application\chrome.exe')
+    Open Browser  https://demo.nopcommerce.com/   chrome    options=add_argument('profile-directory=Profile 1');add_argument(r'user-data-dir=C:\\Users\\xghus\\AppData\\Local\\Google\\Chrome\\User Data')
     Set Selenium Implicit Wait    10
     Maximize Browser Window
 
@@ -197,34 +197,34 @@ Close The Current Tab
 
 Get Window Height
     ${height}=    Execute Javascript    return screen.height
-    [Return]    ${height}
+    RETURN    ${height}
 
 Get Window Width
     ${width}=    Execute Javascript    return screen.width
-    [Return]    ${width}
+    RETURN    ${width}
 
 Get Domain Name By Javascript
     ${domain}=      Execute Javascript      return document.domain
-    [Return]    ${domain}
+    RETURN    ${domain}
 
 Get URL By Javascript
     ${URL}=      Execute Javascript      return document.URL
-    [Return]    ${URL}
+    RETURN    ${URL}
 
 Get Title By Javascript
     ${title}=      Execute Javascript      return document.title
-    [Return]    ${title}
+    RETURN    ${title}
 
 Get Innertext By Javascript
     ${innertext}=      Execute Javascript      return document.documentElement.innerText
-    [Return]    ${innertext}
+    RETURN    ${innertext}
 
 Get Element Validation Message
     [Arguments]      ${xpath}
     ${webElement}       Get WebElement    ${xpath}
     ${validation_message}=  Execute Javascript      return arguments[0].validationMessage      ARGUMENTS        ${webelement}
     Sleep   0.25
-    [Return]    ${validation_message}
+    RETURN    ${validation_message}
 
 Scroll Up To The Top
     Execute Javascript      window.scrollTo(0, -document.body.scrollHeight)

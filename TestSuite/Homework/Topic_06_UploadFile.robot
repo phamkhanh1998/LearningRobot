@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    Process
 
 *** Variables ***
 ${url_tc}  https://www.fahasa.com/customer/account/create
@@ -98,7 +99,52 @@ TC03 - Handle Upload Multiple File By Choose File Action
     Page Should Contain Element    ${Bluimp_Verify_Img2}
     Page Should Contain Element    ${Bluimp_Verify_Img3}
 
+    Close Browser
 
+TC04 - Handle Upload File By AutoIT
+    Log To Console    S1: Open https://blueimp.github.io/jQuery-File-Upload/
+    Open Browser  ${url_tc2}  ${browser}
+    Set Browser Implicit Wait    10
+    Maximize Browser Window
+    
+    Log To Console    S2: Upload 3 images consequently
+    Click Element    ${Bluimp_Button_AddFiles}
+    Run Process  ${EXECDIR}\\AutoIT\\chromeUploadOneTime.exe  ${file_path1}
+
+    Log To Console    S3: Verify 3 names of images show correctly
+    Page Should Contain Element    ${Verify_Img}
+
+    Log To Console    S4: Click on Start button
+    Click Element    ${Bluimp_Button_Start}
+
+    Log To Console    S5: Verify 3 images are uploaded successfully
+    Page Should Contain Element    ${Bluimp_Verify_Img}
+
+    Close Browser
+
+TC05 - Handle Upload Multiple File By AutoIT
+    Log To Console    S1: Open https://blueimp.github.io/jQuery-File-Upload/
+    Open Browser  ${url_tc2}  ${browser}
+    Maximize Browser Window
+
+    Log To Console    S2: Upload 3 images consequently
+    Click Element    ${Bluimp_Button_AddFiles}
+    Run Process  ${EXECDIR}\\AutoIT\\chromeUploadMultiple.exe  ${file_path1}  ${file_path2}
+
+    Log To Console    S3: Verify 3 names of images show correctly
+    Page Should Contain Element    ${Verify_Img}
+    Page Should Contain Element    ${Verify_Img2}
+
+    Log To Console    S4: Click on Start button
+    Click Element    ${Bluimp_Button_Start}
+    Click Element    ${Bluimp_Button_Start2}
+    Sleep    5
+
+    Log To Console    S5: Verify 3 images are uploaded successfully
+    Page Should Contain Element    ${Bluimp_Verify_Img}
+    Page Should Contain Element    ${Bluimp_Verify_Img2}
+
+    Close Browser
 Example - Learn Topic 10
     [Tags]  frame1
     Log To Console    S1: Open https://blueimp.github.io/jQuery-File-Upload/

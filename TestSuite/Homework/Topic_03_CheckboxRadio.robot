@@ -102,8 +102,6 @@ TC04:
 
     Close Browser
 
-
-
 TC05: Advance
     Log To Console    Step 01: Open brower with link
     Open Browser  ${url_ggsheet}  ${browser}
@@ -119,5 +117,7 @@ TC05: Advance
     Log To Console    Step 04: Verify “Cần Thơ” option is selected
     ${checked_value}  Get Element Attribute    //div[@id='i15']    tabindex
     Should Be Equal    ${checked_value}    0
+
+    Close Browser
 
 *** Keywords ***

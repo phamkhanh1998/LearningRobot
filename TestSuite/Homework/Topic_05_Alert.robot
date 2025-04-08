@@ -1,8 +1,8 @@
 *** Settings ***
 Library  SeleniumLibrary
 Library  String
-Library    Telnet
-Library    Process
+Library  Telnet
+Library  Process
 
 *** Variables ***
 ${url_tc}  https://automationfc.github.io/basic-form/index.html
@@ -16,7 +16,6 @@ ${AutomationFC_Button_JSAlert}  //button[text()='Click for JS Alert']
 ${AutomationFC_Button_JSConfirm}  //button[text()='Click for JS Confirm']
 ${AutomationFC_Button_JSPrompt}  //button[text()='Click for JS Prompt']
 ${AutomationFC_Verify}  //p[@id='result']
-
 
 *** Test Cases ***
 TC01 - Accept Alert

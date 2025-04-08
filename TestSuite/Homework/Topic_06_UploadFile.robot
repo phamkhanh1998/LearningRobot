@@ -26,7 +26,6 @@ ${Bluimp_Verify_Img}  //a[text()='img.jpg']/../../..//span[text()='Delete']
 ${Bluimp_Verify_Img2}  //a[text()='img2.jpg']/../../..//span[text()='Delete']
 ${Bluimp_Verify_Img3}  //a[text()='img3.jpg']/../../..//span[text()='Delete']
 
-
 *** Test Cases ***
 TC01: Handle Button
     Log To Console    S1: Open https://www.fahasa.com/customer/account/create

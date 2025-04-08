@@ -1,181 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-03-21T23:01:00.603472" rpa="false" schemaversion="5">
-<suite id="s1" name="Topic 06 UploadFile" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_06_UploadFile.robot">
-<test id="s1-t1" name="TC05 - Handle Upload Multiple File By AutoIT" line="125">
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-04-08T21:58:59.801238" rpa="false" schemaversion="5">
+<suite id="s1" name="Topic 10 ElementCondition" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_10_ElementCondition.robot">
+<test id="s1-t1" name="Exercise 01 - Element displays / visible" line="13">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S1: Open https://blueimp.github.io/jQuery-File-Upload/</arg>
+<arg>S1: Open website https://www.facebook.com/</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-21T23:01:00.813828" elapsed="0.001018"/>
+<status status="PASS" start="2025-04-08T21:59:00.216138" elapsed="0.002008"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-21T23:01:00.814846" level="INFO">Opening browser 'chrome' to base url 'https://blueimp.github.io/jQuery-File-Upload/'.</msg>
-<arg>${url_tc2}</arg>
+<msg time="2025-04-08T21:59:00.218146" level="INFO">Opening browser 'chrome' to base url 'https://www.facebook.com/'.</msg>
+<arg>${url_tc1}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-21T23:01:00.814846" elapsed="5.189001"/>
+<status status="PASS" start="2025-04-08T21:59:00.218146" elapsed="9.250013"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-04-08T21:59:09.469273" elapsed="0.003004"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-03-21T23:01:06.003847" elapsed="0.048317"/>
+<status status="PASS" start="2025-04-08T21:59:09.473280" elapsed="2.119709"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>S2: Upload 3 images consequently</arg>
+<arg>S2: Wait until “Email” textbox displays</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-21T23:01:06.053511" elapsed="0.001006"/>
+<status status="PASS" start="2025-04-08T21:59:11.593999" elapsed="0.002012"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-21T23:01:06.056510" level="INFO">Clicking element '//input[@type='file']'.</msg>
-<msg time="2025-03-21T23:01:06.244654" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-21T23:01:06.246663" level="FAIL">InvalidArgumentException: Message: invalid argument
-  (Session info: chrome=134.0.6998.118)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6D0BAFE65+26629]
-	(No symbol) [0x00007FF6D0B16030]
-	(No symbol) [0x00007FF6D09A914C]
-	(No symbol) [0x00007FF6D09F3627]
-	(No symbol) [0x00007FF6D0A27AAA]
-	(No symbol) [0x00007FF6D09F2156]
-	(No symbol) [0x00007FF6D0A27CC0]
-	(No symbol) [0x00007FF6D0A50169]
-	(No symbol) [0x00007FF6D0A27883]
-	(No symbol) [0x00007FF6D09F0550]
-	(No symbol) [0x00007FF6D09F1803]
-	GetHandleVerifier [0x00007FF6D0F072DD+3529853]
-	GetHandleVerifier [0x00007FF6D0F1DA42+3621858]
-	GetHandleVerifier [0x00007FF6D0F124F3+3575443]
-	GetHandleVerifier [0x00007FF6D0C7B79A+860474]
-	(No symbol) [0x00007FF6D0B208AF]
-	(No symbol) [0x00007FF6D0B1CBE4]
-	(No symbol) [0x00007FF6D0B1CD86]
-	(No symbol) [0x00007FF6D0B0C2E9]
-	BaseThreadInitThunk [0x00007FFE687AE8D7+23]
-	RtlUserThreadStart [0x00007FFE696BBF6C+44]
-</msg>
-<arg>${Bluimp_Button_AddFiles}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-03-21T23:01:06.054517" elapsed="0.196153">InvalidArgumentException: Message: invalid argument
-  (Session info: chrome=134.0.6998.118)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6D0BAFE65+26629]
-	(No symbol) [0x00007FF6D0B16030]
-	(No symbol) [0x00007FF6D09A914C]
-	(No symbol) [0x00007FF6D09F3627]
-	(No symbol) [0x00007FF6D0A27AAA]
-	(No symbol) [0x00007FF6D09F2156]
-	(No symbol) [0x00007FF6D0A27CC0]
-	(No symbol) [0x00007FF6D0A50169]
-	(No symbol) [0x00007FF6D0A27883]
-	(No symbol) [0x00007FF6D09F0550]
-	(No symbol) [0x00007FF6D09F1803]
-	GetHandleVerifier [0x00007FF6D0F072DD+3529853]
-	GetHandleVerifier [0x00007FF6D0F1DA42+3621858]
-	GetHandleVerifier [0x00007FF6D0F124F3+3575443]
-	GetHandleVerifier [0x00007FF6D0C7B79A+860474]
-	(No symbol) [0x00007FF6D0B208AF]
-	(No symbol) [0x00007FF6D0B1CBE4]
-	(No symbol) [0x00007FF6D0B1CD86]
-	(No symbol) [0x00007FF6D0B0C2E9]
-	BaseThreadInitThunk [0x00007FFE687AE8D7+23]
-	RtlUserThreadStart [0x00007FFE696BBF6C+44]
-</status>
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2025-04-08T21:59:11.598426" level="INFO">${start_time} = 2025-04-08 21:59:11</msg>
+<var>${start_time}</var>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2025-04-08T21:59:11.597004" elapsed="0.002429"/>
 </kw>
-<kw name="Run Process" owner="Process">
-<arg>${EXECDIR}\\AutoIT\\chromeUploadMultiple.exe</arg>
-<arg>${file_path1}</arg>
-<arg>${file_path2}</arg>
-<doc>Runs a process and waits for it to complete.</doc>
-<status status="NOT RUN" start="2025-03-21T23:01:06.250670" elapsed="0.000000"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Facebook_Textbox_Email}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-08T21:59:11.599433" elapsed="0.129655"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>S3: Verify 3 names of images show correctly</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-03-21T23:01:06.250670" elapsed="0.000000"/>
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2025-04-08T21:59:11.731364" level="INFO">${end_time} = 2025-04-08 21:59:11</msg>
+<var>${end_time}</var>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2025-04-08T21:59:11.729088" elapsed="0.005453"/>
 </kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<arg>${Verify_Img}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="NOT RUN" start="2025-03-21T23:01:06.250670" elapsed="0.000000"/>
+<kw name="Subtract Date From Date" owner="DateTime">
+<msg time="2025-04-08T21:59:11.738598" level="INFO">${wait_time} = 0.0</msg>
+<var>${wait_time}</var>
+<arg>${end_time}</arg>
+<arg>${start_time}</arg>
+<doc>Subtracts date from another date and returns time between.</doc>
+<status status="PASS" start="2025-04-08T21:59:11.734541" elapsed="0.004057"/>
 </kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<arg>${Verify_Img2}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="NOT RUN" start="2025-03-21T23:01:06.250670" elapsed="0.001149"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>S4: Click on Start button</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-03-21T23:01:06.251819" elapsed="0.000000"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>${Bluimp_Button_Start}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-03-21T23:01:06.251819" elapsed="0.000000"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>${Bluimp_Button_Start2}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-03-21T23:01:06.251819" elapsed="0.000000"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-03-21T23:01:06.251819" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>S5: Verify 3 images are uploaded successfully</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-03-21T23:01:06.251819" elapsed="0.000000"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<arg>${Bluimp_Verify_Img}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="NOT RUN" start="2025-03-21T23:01:06.251819" elapsed="0.000000"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<arg>${Bluimp_Verify_Img2}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="NOT RUN" start="2025-03-21T23:01:06.251819" elapsed="0.000000"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-08T21:59:11.738598" level="INFO">Time waited: 0.0 seconds</msg>
+<arg>Time waited: ${wait_time} seconds</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-08T21:59:11.738598" elapsed="0.000000"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2025-03-21T23:01:06.251819" elapsed="0.000000"/>
+<status status="PASS" start="2025-04-08T21:59:11.738598" elapsed="2.272467"/>
 </kw>
-<status status="FAIL" start="2025-03-21T23:01:00.813828" elapsed="5.439083">InvalidArgumentException: Message: invalid argument
-  (Session info: chrome=134.0.6998.118)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6D0BAFE65+26629]
-	(No symbol) [0x00007FF6D0B16030]
-	(No symbol) [0x00007FF6D09A914C]
-	(No symbol) [0x00007FF6D09F3627]
-	(No symbol) [0x00007FF6D0A27AAA]
-	(No symbol) [0x00007FF6D09F2156]
-	(No symbol) [0x00007FF6D0A27CC0]
-	(No symbol) [0x00007FF6D0A50169]
-	(No symbol) [0x00007FF6D0A27883]
-	(No symbol) [0x00007FF6D09F0550]
-	(No symbol) [0x00007FF6D09F1803]
-	GetHandleVerifier [0x00007FF6D0F072DD+3529853]
-	GetHandleVerifier [0x00007FF6D0F1DA42+3621858]
-	GetHandleVerifier [0x00007FF6D0F124F3+3575443]
-	GetHandleVerifier [0x00007FF6D0C7B79A+860474]
-	(No symbol) [0x00007FF6D0B208AF]
-	(No symbol) [0x00007FF6D0B1CBE4]
-	(No symbol) [0x00007FF6D0B1CD86]
-	(No symbol) [0x00007FF6D0B0C2E9]
-	BaseThreadInitThunk [0x00007FFE687AE8D7+23]
-	RtlUserThreadStart [0x00007FFE696BBF6C+44]
-</status>
+<status status="PASS" start="2025-04-08T21:59:00.216138" elapsed="13.794927"/>
 </test>
-<status status="FAIL" start="2025-03-21T23:01:00.622198" elapsed="5.630713"/>
+<status status="PASS" start="2025-04-08T21:58:59.831189" elapsed="14.179876"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Topic 06 UploadFile">Topic 06 UploadFile</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Topic 10 ElementCondition">Topic 10 ElementCondition</stat>
 </suite>
 </statistics>
 <errors>

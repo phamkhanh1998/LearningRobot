@@ -122,8 +122,8 @@ Ex26: List Should Contain Value
     ${my_list} =  Create List  Python  Java  CSharp  Golang  Cobol  Javascript
     List Should Contain Value  ${my_list}  Cobol
 Ex27: Lists Should Be Equal
-    ${list1}=    Create List    A    B    C
-    ${list2}=    Create List    A    B    C
+    ${list1} =    Create List    A    B    C
+    ${list2} =    Create List    A    B    C
     Lists Should Be Equal    ${list1}    ${list2}
 
 Ex28: Log Dictionary
@@ -133,68 +133,68 @@ Ex29: Log List
     Log List  ${List}
 
 Ex30: Pop From Dictionary
-    ${user}=    Create Dictionary    name=Alice    age=25    city=Hanoi
-    ${age}=     Pop From Dictionary    ${user}    age
+    ${user} =    Create Dictionary    name=Alice    age=25    city=Hanoi
+    ${age} =     Pop From Dictionary    ${user}    age
     Log    Đã xóa 'age', giá trị lấy được là: ${age}
     Log Dictionary    ${user}
 
 Ex31: Remove Duplicates
-    ${mylist}=     Create List    A    B    A    C    B    D
-    ${unique}=     Remove Duplicates    ${mylist}
+    ${mylist} =     Create List    A    B    A    C    B    D
+    ${unique} =     Remove Duplicates    ${mylist}
     Log List       ${unique}
 Ex32: Remove From Dictionary
-    ${info}=    Create Dictionary    name=Hana    age=22    city=Hanoi    country=Vietnam
+    ${info} =    Create Dictionary    name=Hana    age=22    city=Hanoi    country=Vietnam
     Remove From Dictionary    ${info}    age    city
     Log Dictionary    ${info}
 
 Ex33: Remove From List
-    ${fruits}=    Create List    Apple    Banana    Cherry    Durian
+    ${fruits} =    Create List    Apple    Banana    Cherry    Durian
     Remove From List    ${fruits}    2
     Log List    ${fruits}
 
 Ex34: Remove Values From List
-    ${my_list}=    Create List    Python  PHP  Java  CSharp
+    ${my_list} =    Create List    Python  PHP  Java  CSharp
     Remove Values From List    ${my_list}    PHP
     Log List    ${my_list}
 
 Ex35: Reverse List
-    ${numbers}=    Create List    1    2    3    4    5
+    ${numbers} =    Create List    1    2    3    4    5
     Reverse List    ${numbers}
     Log List        ${numbers}
 
 Ex36: Set List Value
-    ${mylist}=        Create List    Python  PHP  Java  CSharp
+    ${mylist} =        Create List    Python  PHP  Java  CSharp
     Set List Value    ${mylist}     1    Golang
     Log List          ${mylist}
 
 Ex37: Set To Dictionary
-    ${info}=    Create Dictionary    name=Hana    age=25
+    ${info} =    Create Dictionary    name=Hana    age=25
     Set To Dictionary    ${info}    city=Hanoi    age=26
     Log Dictionary       ${info}
 
 Ex38: Should Contain Match
-    ${text}=    Set Variable    Hello, welcome to the Robot Framework!
+    ${text} =    Set Variable    Hello, welcome to the Robot Framework!
     Should Contain Match    ${text}    Robot
 
 Ex39: Should Not Contain Match
-    ${text}=    Set Variable    Hello, welcome to the Robot Framework!
+    ${text} =    Set Variable    Hello, welcome to the Robot Framework!
     Should Not Contain Match    ${text}    Python
 
 Ex40: Sort List
-    ${numbers}=    Create List    5    3    8    1    9
+    ${numbers} =    Create List    5    3    8    1    9
     Sort List    ${numbers}
     Log List    ${numbers}
 
 Ex41: List Should Not Contain Duplicates
-    ${fruits}=    Create List    Apple    Banana    Cherry    Apple
+    ${fruits} =    Create List    Apple    Banana    Cherry    Apple
     List Should Not Contain Duplicates    ${fruits}
 
 Ex42: List Should Not Contain Value
-    ${fruits}=    Create List    Apple    Banana    Cherry
+    ${fruits} =    Create List    Apple    Banana    Cherry
     List Should Not Contain Value    ${fruits}    Orange
 
 Ex43: Get Dictionary Values
-    ${my_dict}=    Create Dictionary    name=John    age=30    city=New York
-    ${values}=    Get Dictionary Values    ${my_dict}
+    ${my_dict} =    Create Dictionary    name=John    age=30    city=New York
+    ${values} =    Get Dictionary Values    ${my_dict}
     Log List    ${values}
 *** Keywords ***

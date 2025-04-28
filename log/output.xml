@@ -1,81 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2025-04-08T21:58:59.801238" rpa="false" schemaversion="5">
-<suite id="s1" name="Topic 10 ElementCondition" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_10_ElementCondition.robot">
-<test id="s1-t1" name="Exercise 01 - Element displays / visible" line="13">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>S1: Open website https://www.facebook.com/</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-08T21:59:00.216138" elapsed="0.002008"/>
+<robot generator="Robot 7.2.2 (Python 3.12.5 on win32)" generated="2025-04-24T21:35:12.119419" rpa="false" schemaversion="5">
+<suite id="s1" name="Topic 17 Process" source="C:\Users\xghus\PycharmProjects\demorobot\TestSuite\Homework\Topic_17_Process.robot">
+<test id="s1-t1" name="Wait For Process" line="58">
+<kw name="Start Process" owner="Process">
+<msg time="2025-04-24T21:35:12.371494" level="INFO">Starting process:
+ping 127.0.0.1 -n 3</msg>
+<msg time="2025-04-24T21:35:12.377984" level="INFO">${pid} = &lt;Popen: returncode: None args: ['ping', '127.0.0.1', '-n', '3']&gt;</msg>
+<var>${pid}</var>
+<arg>ping</arg>
+<arg>127.0.0.1</arg>
+<arg>-n</arg>
+<arg>3</arg>
+<doc>Starts a new process on background.</doc>
+<status status="PASS" start="2025-04-24T21:35:12.370494" elapsed="0.007490"/>
 </kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-04-08T21:59:00.218146" level="INFO">Opening browser 'chrome' to base url 'https://www.facebook.com/'.</msg>
-<arg>${url_tc1}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-04-08T21:59:00.218146" elapsed="9.250013"/>
+<kw name="Wait For Process" owner="Process">
+<msg time="2025-04-24T21:35:12.378984" level="INFO">Waiting for process to complete.</msg>
+<msg time="2025-04-24T21:35:14.410049" level="INFO">Process completed.</msg>
+<msg time="2025-04-24T21:35:14.410049" level="INFO">${rc} = &lt;result object with rc 0&gt;</msg>
+<var>${rc}</var>
+<arg>${pid}</arg>
+<doc>Waits for the process to complete or to reach the given timeout.</doc>
+<status status="PASS" start="2025-04-24T21:35:12.378984" elapsed="2.031065"/>
 </kw>
-<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
-<arg>10</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-04-08T21:59:09.469273" elapsed="0.003004"/>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-04-24T21:35:14.411396" level="INFO">Argument types are:
+&lt;class 'robot.libraries.Process.ExecutionResult'&gt;
+&lt;class 'str'&gt;</msg>
+<msg time="2025-04-24T21:35:14.411396" level="FAIL">'&lt;result object with rc 0&gt;' cannot be converted to an integer: TypeError: int() argument must be a string, a bytes-like object or a real number, not 'ExecutionResult'</msg>
+<arg>${rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="FAIL" start="2025-04-24T21:35:14.411396" elapsed="0.000000">'&lt;result object with rc 0&gt;' cannot be converted to an integer: TypeError: int() argument must be a string, a bytes-like object or a real number, not 'ExecutionResult'</status>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-04-08T21:59:09.473280" elapsed="2.119709"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>S2: Wait until “Email” textbox displays</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-08T21:59:11.593999" elapsed="0.002012"/>
-</kw>
-<kw name="Get Time" owner="BuiltIn">
-<msg time="2025-04-08T21:59:11.598426" level="INFO">${start_time} = 2025-04-08 21:59:11</msg>
-<var>${start_time}</var>
-<doc>Returns the given time in the requested format.</doc>
-<status status="PASS" start="2025-04-08T21:59:11.597004" elapsed="0.002429"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${Facebook_Textbox_Email}</arg>
-<arg>10</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-04-08T21:59:11.599433" elapsed="0.129655"/>
-</kw>
-<kw name="Get Time" owner="BuiltIn">
-<msg time="2025-04-08T21:59:11.731364" level="INFO">${end_time} = 2025-04-08 21:59:11</msg>
-<var>${end_time}</var>
-<doc>Returns the given time in the requested format.</doc>
-<status status="PASS" start="2025-04-08T21:59:11.729088" elapsed="0.005453"/>
-</kw>
-<kw name="Subtract Date From Date" owner="DateTime">
-<msg time="2025-04-08T21:59:11.738598" level="INFO">${wait_time} = 0.0</msg>
-<var>${wait_time}</var>
-<arg>${end_time}</arg>
-<arg>${start_time}</arg>
-<doc>Subtracts date from another date and returns time between.</doc>
-<status status="PASS" start="2025-04-08T21:59:11.734541" elapsed="0.004057"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-08T21:59:11.738598" level="INFO">Time waited: 0.0 seconds</msg>
-<arg>Time waited: ${wait_time} seconds</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-08T21:59:11.738598" elapsed="0.000000"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-04-08T21:59:11.738598" elapsed="2.272467"/>
-</kw>
-<status status="PASS" start="2025-04-08T21:59:00.216138" elapsed="13.794927"/>
+<status status="FAIL" start="2025-04-24T21:35:12.369494" elapsed="2.041902">'&lt;result object with rc 0&gt;' cannot be converted to an integer: TypeError: int() argument must be a string, a bytes-like object or a real number, not 'ExecutionResult'</status>
 </test>
-<status status="PASS" start="2025-04-08T21:58:59.831189" elapsed="14.179876"/>
+<status status="FAIL" start="2025-04-24T21:35:12.137320" elapsed="2.275080"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Topic 10 ElementCondition">Topic 10 ElementCondition</stat>
+<stat name="Topic 17 Process" id="s1" pass="0" fail="1" skip="0">Topic 17 Process</stat>
 </suite>
 </statistics>
 <errors>

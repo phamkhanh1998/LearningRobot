@@ -46,6 +46,7 @@ TC01:
 TC02:
     Log To Console    S1:Open “https://demos.telerik.com/kendo-ui/radiobutton/index” with Chrome
     Open Browser  ${url_radio}  ${browser}
+    Maximize Browser Window
     Set Selenium Implicit Wait    30
     
     Log To Console    S2:Verify 1.4 Petrol, 92kW  is selected
@@ -76,7 +77,7 @@ TC03:
     
     Log To Console    S3:Verify the Winter option is selected
     Radio Button Should Be Set To    mat-radio-group-0    Winter
-    
+
     Log To Console    S4:Click on the Summer option
     Select Radio Button    mat-radio-group-0    Summer
     

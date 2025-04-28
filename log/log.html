@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 7.0.1 (Python 3.12.5 on win32)" name="Generator">
+<meta content="Robot Framework 7.2.2 (Python 3.12.5 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all">
 :root {
@@ -1252,58 +1252,48 @@ window.stats = (function () {
             });
     }
     function calculatePercents(total, passed, failed, skipped) {
-        if (total == 0) {
+        if (total == 0)
             return [0.0, 0.0, 0.0];
-        }
         var pass = 100.0 * passed / total;
         var skip = 100.0 * skipped / total;
         var fail = 100.0 * failed / total;
         if (pass > 0 && pass < 0.1)
-            pass = 0.1
+            pass = 0.1;
         if (fail > 0 && fail < 0.1)
-            fail = 0.1
+            fail = 0.1;
         if (skip > 0 && skip < 0.1)
-            skip = 0.1
+            skip = 0.1;
         if (pass > 99.95 && pass < 100)
-            pass = 99.9
+            pass = 99.9;
         if (fail > 99.95 && fail < 100)
-            fail = 99.9
+            fail = 99.9;
         if (skip > 99.95 && skip < 100)
-            skip = 99.9
-        return [Math.round(pass*10)/10, Math.round(skip*10)/10, Math.round(fail*10)/10];
+            skip = 99.9;
+        return [round1(pass), round1(skip), round1(fail)];
     }
     function calculateWidths(num1, num2, num3) {
         if (num1 + num2 + num3 === 0)
             return [0.0, 0.0, 0.0];
         // Make small percentages better visible
         if (num1 > 0 && num1 < 1)
-            num1 = 1
+            num1 = 1.0;
         if (num2 > 0 && num2 < 1)
-            num2 = 1
+            num2 = 1.0;
         if (num3 > 0 && num3 < 1)
-            num3 = 1
+            num3 = 1.0;
         // Handle situation where some are rounded up
         while (num1 + num2 + num3 > 100) {
-            if (num1 > num2 && num1 > num3)
-                num1 -= 0.1;
-            else if (num2 > num1 && num2 > num3)
-                num2 -= 0.1;
-            else if (num3 > num1 && num3 > num2)
-                num3 -= 0.1;
-            else if (num1 > num3 && num1 == num2) {
-                num1 -= 0.1;
-                num2 -= 0.1;
-            }
-            else if (num1 > num2 && num1 == num3) {
-                num1 -= 0.1;
-                num3 -= 0.1;
-            }
-            else if (num2 > num1 && num2 == num3) {
-                num2 -= 0.1;
-                num3 -= 0.1;
-            }
+            if (num1 >= num2 && num1 >= num3)
+                num1 = round1(num1 - 0.1);
+            else if (num2 >= num1 && num2 >= num3)
+                num2 = round1(num2 - 0.1);
+            else
+                num3 = round1(num3 - 0.1);
         }
-        return [Math.ceil(num1*10)/10, Math.ceil(num2*10)/10, Math.ceil(num3*10)/10];
+        return [num1, num2, num3];
+    }
+    function round1(num) {
+        return Math.round(num*10) / 10;
     }
     return {
         Statistics: Statistics
@@ -1522,7 +1512,7 @@ window.testdata = function () {
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
     var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF',
                          'ELSE IF', 'ELSE', 'RETURN', 'VAR', 'TRY', 'EXCEPT', 'FINALLY',
-                         'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
+                         'WHILE', 'GROUP', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -2081,25 +2071,25 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[1,0,14180],[],[[4,0,0,[],[1,385,13795],[[0,5,6,0,7,8,0,0,[1,385,2],[]],[0,9,10,0,11,12,0,0,[1,387,9250],[[387,2,13]]],[0,14,10,0,15,16,0,0,[1,9638,3],[]],[0,17,10,0,18,0,0,0,[1,9642,2120],[]],[0,5,6,0,7,19,0,0,[1,11763,2],[]],[0,20,6,0,21,0,22,0,[1,11766,2],[[11767,2,23]]],[0,24,10,0,25,26,0,0,[1,11768,130],[]],[0,20,6,0,21,0,27,0,[1,11898,5],[[11900,2,28]]],[0,29,30,0,31,32,33,0,[1,11904,4],[[11908,2,34]]],[0,35,6,0,36,37,0,0,[1,11908,0],[[11908,2,38]]],[0,39,10,0,40,0,0,0,[1,11908,2272],[]]]]],[],[1,1,0,0]];
+window.output["suite"] = [1,2,3,0,[],[0,0,2275],[],[[4,0,0,[],[0,232,2042,5],[[0,6,7,0,8,9,10,0,[1,233,7],[[234,2,11],[241,2,12]]],[0,4,7,0,13,10,14,0,[1,242,2031],[[242,2,15],[2273,2,16],[2273,2,17]]],[0,18,19,0,20,21,0,0,[0,2274,0],[[2274,2,22],[2274,5,5]]]]]],[],[1,0,1,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Topic 10 ElementCondition","*C:\\Users\\xghus\\PycharmProjects\\demorobot\\TestSuite\\Homework\\Topic_10_ElementCondition.robot","*../TestSuite/Homework/Topic_10_ElementCondition.robot","*Exercise 01 - Element displays / visible","*Log To Console","*BuiltIn","*<p>Logs the given message to the console.\x3c/p>","*S1: Open website <a href=\"https://www.facebook.com/\">https://www.facebook.com/\x3c/a>","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*${url_tc1}    ${browser}","*Opening browser 'chrome' to base url '<a href=\"https://www.facebook.com/\">https://www.facebook.com/\x3c/a>'.","*Set Browser Implicit Wait","*<p>Sets the implicit wait value used by Selenium.\x3c/p>","*10","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*S2: Wait until “Email” textbox displays","*Get Time","*<p>Returns the given time in the requested format.\x3c/p>","*${start_time}","*${start_time} = 2025-04-08 21:59:11","*Wait Until Element Is Visible","*<p>Waits until the element <code>locator\x3c/code> is visible.\x3c/p>","*${Facebook_Textbox_Email}    10","*${end_time}","*${end_time} = 2025-04-08 21:59:11","*Subtract Date From Date","*DateTime","*<p>Subtracts date from another date and returns time between.\x3c/p>","*${end_time}    ${start_time}","*${wait_time}","*${wait_time} = 0.0","*Log","*<p>Logs the given message with the given level.\x3c/p>","*Time waited: ${wait_time} seconds","*Time waited: 0.0 seconds","*Close Browser","*<p>Closes the current browser.\x3c/p>"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Topic 17 Process","*C:\\Users\\xghus\\PycharmProjects\\demorobot\\TestSuite\\Homework\\Topic_17_Process.robot","*../TestSuite/Homework/Topic_17_Process.robot","*Wait For Process","*'&lt;result object with rc 0&gt;' cannot be converted to an integer: TypeError: int() argument must be a string, a bytes-like object or a real number, not 'ExecutionResult'","*Start Process","*Process","*<p>Starts a new process on background.\x3c/p>","*ping    127.0.0.1    -n    3","*${pid}","*Starting process:\nping 127.0.0.1 -n 3","*${pid} = &lt;Popen: returncode: None args: ['ping', '127.0.0.1', '-n', '3']&gt;","*<p>Waits for the process to complete or to reach the given timeout.\x3c/p>","*${rc}","*Waiting for process to complete.","*Process completed.","*${rc} = &lt;result object with rc 0&gt;","*Should Be Equal As Integers","*BuiltIn","*<p>Fails if objects are unequal after converting them to integers.\x3c/p>","*${rc}    0","*Argument types are:\n&lt;class 'robot.libraries.Process.ExecutionResult'&gt;\n&lt;class 'str'&gt;"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:14","fail":0,"label":"All Tests","pass":1,"skip":0}],[],[{"elapsed":"00:00:14","fail":0,"id":"s1","label":"Topic 10 ElementCondition","name":"Topic 10 ElementCondition","pass":1,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:02","fail":1,"label":"All Tests","pass":0,"skip":0}],[],[{"elapsed":"00:00:02","fail":1,"id":"s1","label":"Topic 17 Process","name":"Topic 17 Process","pass":0,"skip":0}]];
 </script>
 <script type="text/javascript">
 window.output["errors"] = [];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1744124339831;
+window.output["baseMillis"] = 1745505312137;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 14190;
+window.output["generated"] = 2280;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -2214,7 +2204,7 @@ function addExecutionLog(main) {
 
 <script type="text/x-jquery-tmpl" id="tagStatisticsRowTemplate">
   <tr class="row-${$item.index}">
-    <td class="stats-col-name" title="{{html doc}}">
+    <td class="stats-col-name" title="${doc}">
       <div class="stat-name">
         <span>{{html label}}</span>
         {{if info}}(${info}){{/if}}

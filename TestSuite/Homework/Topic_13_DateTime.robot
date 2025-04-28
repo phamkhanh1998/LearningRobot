@@ -16,24 +16,25 @@ Add Time To Date
 
 Add Time To Time
     ${time}=    Set Variable    08:00:00
-    ${new_time}=    Add Time To Time    ${time}    2 hours
+    ${new_time}=    Add Time To Time    ${time}    2 hours  result_format=number
     Log    ${new_time}
 
 Convert Date Format
-    ${converted}=    Convert Date    05/04/2025    date_format=%d/%m/%Y    result_format=%Y-%m-%d
+    ${converted}=    Convert Date    05/04/2025    date_format=%d/%m/%Y    result_format=time is %Y-%m-%d
     Log    ${converted}
 
 Convert Time Format
-    ${converted}=    Convert Time    10:30 PM    time_format=%I:%M %p    result_format=%H:%M
+    ${converted}=    Convert Time    1 hour 1 second    result_format=timer
     Log    ${converted}
     #Fail
+    # ĐỌc lại result format
 
 Get Current Date
-    ${today}=    Get Current Date    result_format=%Y-%m-%d
+    ${today}=    Get Current Date    result_format=%Y-%B-%d
     Log    ${today}
 
 Subtract Dates
-    ${diff}=    Subtract Date From Date    2025-04-10    2025-04-05
+    ${diff}=    Subtract Date From Date    2025-04-10    2025-04-05  result_format=verbose
     Log    ${diff}
 
 Subtract Time From Date
@@ -41,6 +42,6 @@ Subtract Time From Date
     Log    ${new_date}
 
 Subtract Time From Time
-    ${new_time}=    Subtract Time From Time    15:00:00    2 hours
+    ${new_time}=    Subtract Time From Time    15:00:00    2 hours  result_format=verbose
     Log    ${new_time}
 *** Keywords ***

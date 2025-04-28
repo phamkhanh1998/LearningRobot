@@ -124,7 +124,7 @@ TC02 - Custom Dropdown - React + APM => Not yet
     Click Button    ${Demoqa_Button_Submit}
 
     Log To Console    S3: Verify
-#    Element Should Be Visible    //div[@class='table-responsive']//td[text()='Pham Khanh']
+    Element Should Be Visible    //div[@class='table-responsive']//td[text()='Pham Khanh']
     Element Should Be Visible    //div[@class='table-responsive']//td[text()='phamkhanh@gmail.com']
     Element Should Be Visible    //div[@class='table-responsive']//td[text()='Male']
     Element Should Be Visible    //div[@class='table-responsive']//td[text()='0337409826']

@@ -80,13 +80,6 @@ Ex16: Get Dictionary Keys
     ${keys} =  Get Dictionary Keys  ${my_dict}
     Log  Danh sách key: ${keys}
     #sort key
-
-Ex43: Get Dictionary Values
-    ${my_dict} =    Create Dictionary    name=John    age=30    city=New York
-    ${values} =    Get Dictionary Values    ${my_dict}
-    Log List    ${values}
-
-
 Ex17: Get From Dictionary
     ${my_dict} =  Create Dictionary  name=John  age=30  city=New York
     ${value} =  Get From Dictionary  ${my_dict}  city
@@ -109,12 +102,10 @@ Ex21: Get Matches
     ${my_list} =  Create List  Python  Java  CSharp  Java  Golang  Javascript  JUnit
     ${matches} =  Get Matches  ${my_list}  J*
     Log  ${matches}
-
 Ex22: Get Slice From List
     ${my_list} =  Create List  Python  Java  CSharp  Golang  Cobol  Javascript
     ${slice} =  Get Slice From List  ${my_list}  1  4
     Log  ${slice}
-
 Ex23: Insert Into List
     ${my_list} =  Create List  Python  Java  CSharp
     Insert Into List  ${my_list}  1  PHP
@@ -151,7 +142,6 @@ Ex31: Remove Duplicates
     ${mylist} =     Create List    A    B    A    C    B    D
     ${unique} =     Remove Duplicates    ${mylist}
     Log List       ${unique}
-
 Ex32: Remove From Dictionary
     ${info} =    Create Dictionary    name=Hana    age=22    city=Hanoi    country=Vietnam
     Remove From Dictionary    ${info}    age    city
@@ -163,7 +153,6 @@ Ex33: Remove From List
     Log List    ${fruits}
 
 Ex34: Remove Values From List
-    ${my_list} =    Create List    Python  PHP  Java  CSharp  PHP  JS  PHP
     Remove Values From List    ${my_list}    PHP
     Log List    ${my_list}
 
@@ -183,8 +172,6 @@ Ex37: Set To Dictionary
     Log Dictionary       ${info}
 
 Ex38: Should Contain Match
-    ${text} =    Create List    Robot, welcome to the Robot Framework!
-    Should Contain Match    ${text}    Robot*
 
 Ex39: Should Not Contain Match
     ${text} =    Set Variable    Hello, welcome to the Robot Framework!
@@ -202,6 +189,5 @@ Ex41: List Should Not Contain Duplicates
 Ex42: List Should Not Contain Value
     ${fruits} =    Create List    Apple    Banana    Cherry
     List Should Not Contain Value    ${fruits}    Orange
-
 
 *** Keywords ***

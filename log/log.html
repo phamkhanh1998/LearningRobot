@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 7.0.1 (Python 3.12.5 on win32)" name="Generator">
+<meta content="Robot Framework 7.2.2 (Python 3.12.5 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all">
 :root {
@@ -1252,58 +1252,48 @@ window.stats = (function () {
             });
     }
     function calculatePercents(total, passed, failed, skipped) {
-        if (total == 0) {
+        if (total == 0)
             return [0.0, 0.0, 0.0];
-        }
         var pass = 100.0 * passed / total;
         var skip = 100.0 * skipped / total;
         var fail = 100.0 * failed / total;
         if (pass > 0 && pass < 0.1)
-            pass = 0.1
+            pass = 0.1;
         if (fail > 0 && fail < 0.1)
-            fail = 0.1
+            fail = 0.1;
         if (skip > 0 && skip < 0.1)
-            skip = 0.1
+            skip = 0.1;
         if (pass > 99.95 && pass < 100)
-            pass = 99.9
+            pass = 99.9;
         if (fail > 99.95 && fail < 100)
-            fail = 99.9
+            fail = 99.9;
         if (skip > 99.95 && skip < 100)
-            skip = 99.9
-        return [Math.round(pass*10)/10, Math.round(skip*10)/10, Math.round(fail*10)/10];
+            skip = 99.9;
+        return [round1(pass), round1(skip), round1(fail)];
     }
     function calculateWidths(num1, num2, num3) {
         if (num1 + num2 + num3 === 0)
             return [0.0, 0.0, 0.0];
         // Make small percentages better visible
         if (num1 > 0 && num1 < 1)
-            num1 = 1
+            num1 = 1.0;
         if (num2 > 0 && num2 < 1)
-            num2 = 1
+            num2 = 1.0;
         if (num3 > 0 && num3 < 1)
-            num3 = 1
+            num3 = 1.0;
         // Handle situation where some are rounded up
         while (num1 + num2 + num3 > 100) {
-            if (num1 > num2 && num1 > num3)
-                num1 -= 0.1;
-            else if (num2 > num1 && num2 > num3)
-                num2 -= 0.1;
-            else if (num3 > num1 && num3 > num2)
-                num3 -= 0.1;
-            else if (num1 > num3 && num1 == num2) {
-                num1 -= 0.1;
-                num2 -= 0.1;
-            }
-            else if (num1 > num2 && num1 == num3) {
-                num1 -= 0.1;
-                num3 -= 0.1;
-            }
-            else if (num2 > num1 && num2 == num3) {
-                num2 -= 0.1;
-                num3 -= 0.1;
-            }
+            if (num1 >= num2 && num1 >= num3)
+                num1 = round1(num1 - 0.1);
+            else if (num2 >= num1 && num2 >= num3)
+                num2 = round1(num2 - 0.1);
+            else
+                num3 = round1(num3 - 0.1);
         }
-        return [Math.ceil(num1*10)/10, Math.ceil(num2*10)/10, Math.ceil(num3*10)/10];
+        return [num1, num2, num3];
+    }
+    function round1(num) {
+        return Math.round(num*10) / 10;
     }
     return {
         Statistics: Statistics
@@ -1522,7 +1512,7 @@ window.testdata = function () {
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
     var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF',
                          'ELSE IF', 'ELSE', 'RETURN', 'VAR', 'TRY', 'EXCEPT', 'FINALLY',
-                         'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
+                         'WHILE', 'GROUP', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -2081,25 +2071,25 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[0,0,6260],[],[[4,0,0,[],[0,202,6057,5],[[0,6,7,0,8,9,0,0,[1,203,0],[]],[0,10,11,0,12,13,0,0,[1,205,4529],[[205,2,14]]],[0,15,11,0,16,0,0,0,[1,4735,34],[]],[0,17,11,0,18,19,0,0,[1,4770,4],[]],[0,6,7,0,8,20,0,0,[1,4776,0],[]],[0,21,11,0,22,23,0,0,[1,4778,103],[[4779,2,24]]],[0,6,7,0,8,25,0,0,[1,4880,0],[]],[0,26,11,0,27,28,0,0,[1,4880,32],[[4881,2,29]]],[0,6,7,0,8,30,0,0,[1,4914,0],[]],[0,31,11,0,32,33,0,0,[0,4914,1344],[[4914,2,34],[6147,2,35],[6147,5,5]]],[0,6,7,0,8,36,0,0,[3,6258,0],[]],[0,26,11,0,27,33,0,0,[3,6258,0],[]],[0,6,7,0,8,37,0,0,[3,6258,0],[]],[0,38,11,0,39,40,41,0,[3,6258,0],[]],[0,42,7,0,43,44,0,0,[3,6258,0],[]],[0,45,11,0,46,0,0,0,[3,6259,0],[]]]]],[],[1,0,1,0]];
+window.output["suite"] = [1,2,3,0,[],[1,0,23018],[],[[4,0,0,[],[1,395,22622],[[0,5,6,0,7,8,0,0,[1,395,0],[]],[0,9,10,0,11,12,0,0,[1,395,16796],[[395,2,13]]],[0,14,10,0,15,0,0,0,[1,17192,42],[]],[0,16,10,0,17,18,0,0,[1,17233,444],[[17235,2,19]]],[0,20,10,0,21,22,0,0,[1,17678,616],[]],[0,5,6,0,7,23,0,0,[1,18296,1],[]],[0,24,10,0,25,26,0,0,[1,18298,231],[[18298,2,27]]],[0,24,10,0,25,28,0,0,[1,18529,160],[[18530,2,29]]],[0,24,10,0,25,30,0,0,[1,18690,126],[[18690,2,31]]],[0,16,10,0,17,32,0,0,[1,18816,90],[[18816,2,33]]],[0,24,10,0,25,34,0,0,[1,18908,121],[[18908,2,35]]],[0,16,10,0,17,36,0,0,[1,19030,145],[[19030,2,37]]],[0,16,10,0,17,38,0,0,[1,19175,59],[[19175,2,39]]],[0,16,10,0,17,40,0,0,[1,19234,46],[[19236,2,41]]],[0,16,10,0,17,42,0,0,[1,19281,92],[[19282,2,43]]],[0,24,10,0,25,44,0,0,[1,19374,143],[[19374,2,45]]],[0,46,10,0,47,48,0,0,[1,19517,25],[[19518,2,49],[19519,2,50],[19519,2,51]]],[0,16,10,0,17,52,0,0,[1,19542,77],[[19543,2,53]]],[0,54,10,0,55,56,0,0,[1,19619,43],[[19620,2,57]]],[0,24,10,0,25,58,0,0,[1,19662,172],[[19663,2,59]]],[0,60,0,0,0,0,0,0,[1,19834,15],[[0,61,10,0,62,63,0,0,[1,19837,12],[[19838,2,64]]]]],[0,16,10,0,17,65,0,0,[1,19850,101],[[19851,2,66]]],[0,16,10,0,17,67,0,0,[1,19950,78],[[19952,2,68]]],[0,16,10,0,17,69,0,0,[1,20029,114],[[20030,2,70]]],[0,16,10,0,17,71,0,0,[1,20144,69],[[20144,2,72]]],[0,73,10,0,74,22,0,0,[1,20214,122],[[20214,2,75]]],[0,5,6,0,7,76,0,0,[1,20337,0],[]],[0,77,10,0,78,79,0,0,[1,20337,175],[[20511,2,80]]],[0,77,10,0,78,81,0,0,[1,20512,27],[[20538,2,82]]],[0,77,10,0,78,83,0,0,[1,20539,19],[[20558,2,84]]],[0,77,10,0,78,85,0,0,[1,20558,20],[[20578,2,86]]],[0,77,10,0,78,87,0,0,[1,20578,18],[[20596,2,88]]],[0,77,10,0,78,89,0,0,[1,20597,23],[[20619,2,90]]],[0,77,10,0,78,91,0,0,[1,20621,22],[[20643,2,92]]],[0,77,10,0,78,93,0,0,[1,20644,19],[[20663,2,94]]],[0,77,10,0,78,95,0,0,[1,20663,17],[[20679,2,96]]],[0,77,10,0,78,97,0,0,[1,20681,17],[[20697,2,98]]],[0,99,10,0,100,0,0,0,[1,20697,2320],[]]]]],[],[1,1,0,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Topic 03 CheckboxRadio","*C:\\Users\\xghus\\PycharmProjects\\demorobot\\TestSuite\\Homework\\Topic_03_CheckboxRadio.robot","*../TestSuite/Homework/Topic_03_CheckboxRadio.robot","*TC03:","eNqNk19vmzAUxZ+bT2HxUCViMP8BDKnyEAh0fdgmLd1epilywE2sEBsZk6Xffiapum4PUF4QnN89Ovf6Oq/5kUuT1aI8PEjDdckbw6v83L+FknPwmbct2/E54FcUlD0LxF94DvIX6bY2d0I2nQHmueELR7NKKMdWsLZdOMeq9C5/NhvJjDhxr1TSaFU7QFRWZuYqe9i7mDhAsiN/K+y06hoPOuDE6s4q6+545NoBhm2FrPh54XjIud2ZOyBaINVLVratOWAGNMqGBlNCkg8gDOHMB1/NnuvXxn6rrq6A5iW32YCVruXzS1uVOIGN3PWJLevJnVdiGME4iSKcLJzXJhvVdM0lg+/7feFHW9l/TgCYru0s7VDt8J7UHJR7rWx/iBAf+lESEB8FeDZZG1YejGYln09u7rn5xGRV8x9ciydh0/6EZ2gfWhTUPlkWLUMXxzROfk1upl8UaJ+PW1XP/uNImGI4RIRZXCTLISLCFOXJMBGkSzxMoCxEwwRMRwiECQoGiYASPNwLQmkWjXiEweDEoqigORnxQHCYgEWRwZGkmPYeI5uQIrTMVy4JwhgT+g4exzjJXGIvAkHRe/xXaWL9Q0jDKBzn4wTb1XTjwMYfPCwawCQvhpc3S0kwQmSrweOkOEOoX96UtfxxrzmrHqQwj/tOHt6Qy5gWKI9X1MX9zL+Z+nvL9ZW391Kbf9gkT9MiytzAhvsDzQiGuw==","*Log To Console","*BuiltIn","*<p>Logs the given message to the console.\x3c/p>","*S1:Open “https://material.angular.io/components/radio/examples” with Chrome","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*${url_material}    ${browser}","eNqdy8ENgzAMAMBVLD75xf+KskJnMOCSSIkd2UZlfJih35PuM1iqHLCa/pwN0lZMOycIhZWc4bQGaSYoxt/3VCKGvxA7BVullkmOs5HlqrhpHyos4Wi0P8AX9dHYp+WvNiMtKd98GjrL","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*Set Selenium Implicit Wait","*<p>Sets the implicit wait value used by Selenium.\x3c/p>","*30","*S2:Click on the Winter option","*Click Element","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*${Material_Radio_Winter}","*Clicking element '//input[@id=\"mat-radio-0-input\"]'.","*S3:Verify the Winter option is selected","*Radio Button Should Be Set To","*<p>Verifies radio button group <code>group_name\x3c/code> is set to <code>value\x3c/code>.\x3c/p>","*mat-radio-group-0    Winter","*Verifying radio button 'mat-radio-group-0' has selection 'Winter'.","*S4:Click on the Summer option","*Select Radio Button","*<p>Sets the radio button group <code>group_name\x3c/code> to <code>value\x3c/code>.\x3c/p>","*mat-radio-group-0    Summer","*Selecting 'Summer' from radio button 'mat-radio-group-0'.","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-3.png\"><img src=\"selenium-screenshot-3.png\" width=\"800px\">\x3c/a>","*S5:Verify the Summer option is selected","*S6:Verify the Winter option is NOT selected","*Get Element Attribute","*<p>Returns the value of <code>attribute\x3c/code> from the element <code>locator\x3c/code>.\x3c/p>","*//input[@id=\"mat-radio-0-input\"]    tabindex","*${checked_value}","*Should Be Equal","*<p>Fails if the given objects are unequal.\x3c/p>","*${checked_value}    -1","*Close Browser","*<p>Closes the current browser.\x3c/p>"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Topic 04 DropdownList","*C:\\Users\\xghus\\PycharmProjects\\demorobot\\TestSuite\\Homework\\Topic_04_DropdownList.robot","*../TestSuite/Homework/Topic_04_DropdownList.robot","*TC02 - Custom Dropdown - React + APM =&gt; Not yet","*Log To Console","*BuiltIn","*<p>Logs the given message to the console.\x3c/p>","*S1: Open <a href=\"https://demoqa.com/forms\">https://demoqa.com/forms\x3c/a>","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*${url_tc2}    ${browser}","*Opening browser 'chrome' to base url '<a href=\"https://demoqa.com/forms\">https://demoqa.com/forms\x3c/a>'.","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*Click Element","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*${Demoqa_Span_Form}","*Clicking element '//span[text()='Practice Form']'.","*Scroll Element Into View","*<p>Scrolls the element identified by <code>locator\x3c/code> into view.\x3c/p>","*${Demoqa_Button_Submit}","*S2: Nhập toàn bộ thông tin vào form","*Input Text","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${Demoqa_Textbox_FirstName}    Pham","*Typing text 'Pham' into text field '//input[@id='firstName']'.","*${Demoqa_Textbox_LastName}    Khanh","*Typing text 'Khanh' into text field '//input[@id='lastName']'.","*${Demoqa_Textbox_Email}    phamkhanh@gmail.com","*Typing text 'phamkhanh@gmail.com' into text field '//input[@id='userEmail']'.","*${Demoqa_Checkbox_Male}","*Clicking element '//label[string()='Male']'.","*${Demoqa_Textbox_Number}    0337409826","*Typing text '0337409826' into text field '//input[@id='userNumber']'.","*${Demoqa_Textbox_Date}","*Clicking element '//input[@id='dateOfBirthInput']'.","*//option[@value='3']","*Clicking element '//option[@value='3']'.","*//option[@value='1998']","*Clicking element '//option[@value='1998']'.","*//div[@aria-label='Choose Tuesday, April 7th, 1998']","*Clicking element '//div[@aria-label='Choose Tuesday, April 7th, 1998']'.","*${Demoqa_Textbox_Subject}    English","*Typing text 'English' into text field '//input[@id='subjectsInput']'.","*Press Keys","*<p>Simulates the user pressing key(s) to an element or on the active browser.\x3c/p>","*None    ENTER","*Sending key(s) ('ENTER',) to page.","*Pressing special key ENTER to browser.","*Releasing special key ENTER.","*${Demoqa_Checkbox_Sports}","*Clicking element '//label[string()='Sports']'.","*Choose File","*<p>Inputs the <code>file_path\x3c/code> into the file input field <code>locator\x3c/code>.\x3c/p>","*${Demoqa_UploadFile_Picture}    ${EXECDIR}\\\\TestData\\\\img.jpg","*Sending C:\\Users\\xghus\\PycharmProjects\\demorobot\\TestData\\img.jpg to browser.","*${Demoqa_TextArea_Address}    Tay Ho, Ha Noi","*Typing text 'Tay Ho, Ha Noi' into text field '//textarea[@id='currentAddress']'.","*Scroll To The Bottom","*Execute Javascript","*<p>Executes the given JavaScript code with possible arguments.\x3c/p>","*window.scrollTo(0, document.body.scrollHeight)","*Executing JavaScript:\nwindow.scrollTo(0, document.body.scrollHeight)\nWithout any arguments.","*//div[text()='Select State']","*Clicking element '//div[text()='Select State']'.","*//div[text()='NCR']","*Clicking element '//div[text()='NCR']'.","*//div[text()='Select City']","*Clicking element '//div[text()='Select City']'.","*//div[text()='Delhi']","*Clicking element '//div[text()='Delhi']'.","*Click Button","*<p>Clicks the button identified by <code>locator\x3c/code>.\x3c/p>","*Clicking button '//button[@id='submit']'.","*S3: Verify","*Element Should Be Visible","*<p>Verifies that the element identified by <code>locator\x3c/code> is visible.\x3c/p>","*//div[@class='table-responsive']//td[text()='Pham Khanh']","*Element '//div[@class='table-responsive']//td[text()='Pham Khanh']' is displayed.","*//div[@class='table-responsive']//td[text()='phamkhanh@gmail.com']","*Element '//div[@class='table-responsive']//td[text()='phamkhanh@gmail.com']' is displayed.","*//div[@class='table-responsive']//td[text()='Male']","*Element '//div[@class='table-responsive']//td[text()='Male']' is displayed.","*//div[@class='table-responsive']//td[text()='0337409826']","*Element '//div[@class='table-responsive']//td[text()='0337409826']' is displayed.","*//div[@class='table-responsive']//td[text()='07 April,1998']","*Element '//div[@class='table-responsive']//td[text()='07 April,1998']' is displayed.","*//div[@class='table-responsive']//td[text()='English']","*Element '//div[@class='table-responsive']//td[text()='English']' is displayed.","*//div[@class='table-responsive']//td[text()='Sports']","*Element '//div[@class='table-responsive']//td[text()='Sports']' is displayed.","*//div[@class='table-responsive']//td[text()='img.jpg']","*Element '//div[@class='table-responsive']//td[text()='img.jpg']' is displayed.","*//div[@class='table-responsive']//td[text()='Tay Ho, Ha Noi']","*Element '//div[@class='table-responsive']//td[text()='Tay Ho, Ha Noi']' is displayed.","*//div[@class='table-responsive']//td[text()='NCR Delhi']","*Element '//div[@class='table-responsive']//td[text()='NCR Delhi']' is displayed.","*Close Browser","*<p>Closes the current browser.\x3c/p>"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:06","fail":1,"label":"All Tests","pass":0,"skip":0}],[],[{"elapsed":"00:00:06","fail":1,"id":"s1","label":"Topic 03 CheckboxRadio","name":"Topic 03 CheckboxRadio","pass":0,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:23","fail":0,"label":"All Tests","pass":1,"skip":0}],[],[{"elapsed":"00:00:23","fail":0,"id":"s1","label":"Topic 04 DropdownList","name":"Topic 04 DropdownList","pass":1,"skip":0}]];
 </script>
 <script type="text/javascript">
 window.output["errors"] = [];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1741619934853;
+window.output["baseMillis"] = 1745852401421;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 6263;
+window.output["generated"] = 23033;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -2214,7 +2204,7 @@ function addExecutionLog(main) {
 
 <script type="text/x-jquery-tmpl" id="tagStatisticsRowTemplate">
   <tr class="row-${$item.index}">
-    <td class="stats-col-name" title="{{html doc}}">
+    <td class="stats-col-name" title="${doc}">
       <div class="stat-name">
         <span>{{html label}}</span>
         {{if info}}(${info}){{/if}}

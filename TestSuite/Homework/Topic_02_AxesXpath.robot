@@ -13,7 +13,6 @@ ${lastname}  Khanh
 ${my_username}  phamkhanh1
 ${my_password}  khanh123
 
-
 ${Textbox_textbox_UserName}  //input[@name='username']
 ${Textbox_textbox_Password}  //input[@name='password']
 ${Textbox_button_Submit}  //button[@type='submit']
